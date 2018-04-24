@@ -20,4 +20,13 @@
 === Repository
 
 == Progress
+* [ ] 1 Domänenanalyse
+** [x] Choose domain for project -> Japanese Vocabulary Trainer
+** [x] Set up FeatureIDE project (Composer: Feature Modeling)
+** [x] Create feature diagram
+*** [x] English language
+*** [x] Only alphabetical characters
+*** [ ] Every feature may have a short description
+** [ ] Write short introduction to the domain
+** [x] (Init project)
 
