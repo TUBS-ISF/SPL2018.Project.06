@@ -1,0 +1,32 @@
+= SPL2018.Project.06
+
+== Overview
+=== Task
+* Topic: Software Product Lines
+
+* Requirements
+** Features
+*** Domain has at least 20 features
+*** 10 of them may be trivial (5-0 LOC)
+
+* Deadlines
+** [ ] 2018/04/29 - 1 Domänenanalyse
+** [ ] 2018/05/13 - 2 Laufzeitvariabilität
+** [ ] 2018/05/27 - 3 Präprozessoren
+** [ ] 2018/06/10 - 4 Black-Box-Framework
+** [ ] 2018/06/24 - 5 Feature-orientierte Programmierung
+** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
+
+=== Repository
+
+== Progress
+* [ ] 1 Domänenanalyse
+** [x] Choose domain for project -> Japanese Vocabulary Trainer
+** [x] Set up FeatureIDE project (Composer: Feature Modeling)
+** [x] Create feature diagram
+*** [x] English language
+*** [x] Only alphabetical characters
+*** [x] Every feature may have a short description
+** [ ] Write short introduction to the domain
+** [x] (Init project)
+

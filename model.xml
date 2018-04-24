@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Hirakanaji">
+            <description>
+The name of the application
+</description>
+            <alt abstract="true" mandatory="true" name="OS">
+                <description>
+The operating system on which the application will run
+</description>
+                <feature name="Web">
+                    <description>
+Platform-independent web version
+</description>
+                </feature>
+                <feature name="Android">
+                    <description>
+Mobile version for Android
+</description>
+                </feature>
+                <feature name="Windows">
+                    <description>
+Local client version on Windows
+</description>
+                </feature>
+            </alt>
+            <and abstract="true" mandatory="true" name="Characters">
+                <description>
+Adds syllabaries with custom syllable sets. These syllable sets contain consonants and vocals
+</description>
+                <and mandatory="true" name="Syllabary">
+                    <description>
+Adds Japanese syllabary to the application
+</description>
+                    <feature name="Hiragana">
+                        <description>
+Japanese syllabary used primarily for native or naturalised Japanese words and grammatical elements
+</description>
+                    </feature>
+                    <feature name="Katakana">
+                        <description>
+Japanese syllabary used primarily for foreign words and names
+</description>
+                    </feature>
+                    <feature name="Romaji">
+                        <description>
+Romanization for Japanese syllables
+</description>
+                    </feature>
+                </and>
+                <or mandatory="true" name="Syllable Sets">
+                    <description>
+Adds Japanese syllable sets to the application
+</description>
+                    <feature name="Gojuuon">
+                        <description>
+Adds monographs
+</description>
+                    </feature>
+                    <feature name="Gojuuon with Dakuten">
+                        <description>
+Adds monographs with diacritics
+</description>
+                    </feature>
+                    <feature name="Youon">
+                        <description>
+Adds digraphs
+</description>
+                    </feature>
+                    <feature name="Youon with Dakuten">
+                        <description>
+Adds digraphs with diacritics
+</description>
+                    </feature>
+                </or>
+                <or mandatory="true" name="Consonants">
+                    <description>
+Adds certain consonants e.g. syllable rows
+</description>
+                    <feature name="None">
+                        <description>
+Adds the consonant row without any consonant prefix
+</description>
+                    </feature>
+                    <feature name="k">
+                        <description>
+Adds the consonant row with the consonant prefix 'k'
+</description>
+                    </feature>
+                    <feature name="s">
+                        <description>
+Adds the consonant row with the consonant prefix 's'
+</description>
+                    </feature>
+                    <feature name="t">
+                        <description>
+Adds the consonant row with the consonant prefix 't'
+</description>
+                    </feature>
+                    <feature name="n">
+                        <description>
+Adds the consonant row with the consonant prefix 'n'
+</description>
+                    </feature>
+                    <feature name="h">
+                        <description>
+Adds the consonant row with the consonant prefix 'h'
+</description>
+                    </feature>
+                    <feature name="m">
+                        <description>
+Adds the consonant row with the consonant prefix 'm'
+</description>
+                    </feature>
+                    <feature name="y">
+                        <description>
+Adds the consonant row with the consonant prefix 'y'
+</description>
+                    </feature>
+                    <feature name="r">
+                        <description>
+Adds the consonant row with the consonant prefix 'r'
+</description>
+                    </feature>
+                    <feature name="w">
+                        <description>
+Adds the consonant row with the consonant prefix 'w'
+</description>
+                    </feature>
+                    <feature name="Special">
+                        <description>
+Adds the consonant row with special 'consonants' e.g. the single character 'n'
+</description>
+                    </feature>
+                    <feature name="g">
+                        <description>
+Adds the consonant row with the consonant prefix 'g'
+</description>
+                    </feature>
+                    <feature name="z">
+                        <description>
+Adds the consonant row with the consonant prefix 'z'
+</description>
+                    </feature>
+                    <feature name="d">
+                        <description>
+Adds the consonant row with the consonant prefix 'd'
+</description>
+                    </feature>
+                    <feature name="b">
+                        <description>
+Adds the consonant row with the consonant prefix 'b'
+</description>
+                    </feature>
+                    <feature name="p">
+                        <description>
+Adds the consonant row with the consonant prefix 'p'
+</description>
+                    </feature>
+                </or>
+                <or mandatory="true" name="Vocals">
+                    <description>
+Adds certain vocals e.g. syllable columns
+</description>
+                    <feature name="a">
+                        <description>
+Adds the basic vocal column 'a'
+</description>
+                    </feature>
+                    <feature name="i">
+                        <description>
+Adds the basic vocal column 'i'
+</description>
+                    </feature>
+                    <feature name="u">
+                        <description>
+Adds the basic vocal column 'u'
+</description>
+                    </feature>
+                    <feature name="e">
+                        <description>
+Adds the basic vocal column 'e'
+</description>
+                    </feature>
+                    <feature name="o">
+                        <description>
+Adds the basic vocal column 'o'
+</description>
+                    </feature>
+                </or>
+            </and>
+            <alt abstract="true" mandatory="true" name="Output">
+                <description>
+The visual output of the application that is used
+</description>
+                <feature name="GUI">
+                    <description>
+GUI output with visual elements and full application funcionality
+</description>
+                </feature>
+                <feature name="CLI">
+                    <description>
+CLI output with limited application functionality
+</description>
+                </feature>
+            </alt>
+            <or mandatory="true" name="Categories">
+                <description>
+Adds application categories for the different application modes
+</description>
+                <and abstract="true" name="Vocabulary">
+                    <description>
+Category for vocabulary application modes
+</description>
+                    <feature name="Learn Vocabulary">
+                        <description>
+Adds the application mode for learning single vocabulary with its English translation
+</description>
+                    </feature>
+                    <feature name="Practice Vocabulary">
+                        <description>
+Adds the application mode for practicing single vocabulary
+</description>
+                    </feature>
+                </and>
+                <and abstract="true" name="Syllables">
+                    <description>
+Category for syllables application modes
+</description>
+                    <feature name="Learn Syllables">
+                        <description>
+Adds the application mode for learning single syllables
+</description>
+                    </feature>
+                    <and name="Scrambler">
+                        <description>
+Adds the application mode for scrambling single syllables for practicing writing and reading skills
+</description>
+                        <feature name="Variable Output Size">
+                            <description>
+Adds the feature to change the output size of the Scrambler
+</description>
+                        </feature>
+                    </and>
+                    <feature name="Show Syllables">
+                        <description>
+Adds the application mode for showing syllables for learning and look-up purposes
+</description>
+                    </feature>
+                </and>
+            </or>
+            <and abstract="true" name="Gamification">
+                <description>
+Adds the feature for gamification elements
+</description>
+                <or name="Game Type">
+                    <description>
+Adds the feature for game type categories
+</description>
+                    <feature name="Mix">
+                        <description>
+Adds the feature for the game type 'Mix' to get different excercises
+</description>
+                    </feature>
+                    <feature name="Single">
+                        <description>
+Adds the feature for the game type 'Mix' to get a single excercise
+</description>
+                    </feature>
+                </or>
+                <feature name="Scoring">
+                    <description>
+Adds the feature for a scoring system
+</description>
+                </feature>
+                <feature name="Achievements">
+                    <description>
+Adds the feature for an achievement system
+</description>
+                </feature>
+            </and>
+            <or name="Export">
+                <description>
+Adds the feature for export functionalities
+</description>
+                <feature name="PDF">
+                    <description>
+Adds the feature for a PDF export of the current view
+</description>
+                </feature>
+                <feature name="TXT">
+                    <description>
+Adds the feature for a TXT export of the current view
+</description>
+                </feature>
+                <feature name="Print">
+                    <description>
+Adds the feature for a print dialogue in the current view
+</description>
+                </feature>
+            </or>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
