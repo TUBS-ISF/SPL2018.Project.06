@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Hirakanaji">
+            <alt abstract="true" mandatory="true" name="OS">
+                <feature name="Web"/>
+                <feature name="Android"/>
+            </alt>
+            <and abstract="true" mandatory="true" name="Characters">
+                <and mandatory="true" name="Syllabary">
+                    <feature name="Hiragana"/>
+                    <feature name="Katakana"/>
+                    <feature name="Romaji"/>
+                </and>
+                <or mandatory="true" name="Syllable Sets">
+                    <feature name="Gojuuon"/>
+                    <feature name="Gojuuon + Dakuten"/>
+                    <feature name="Youon"/>
+                    <feature name="Youon + Dakuten"/>
+                </or>
+                <or mandatory="true" name="Consonants">
+                    <feature name="∅"/>
+                    <feature name="k"/>
+                    <feature name="s"/>
+                    <feature name="t"/>
+                    <feature name="n"/>
+                    <feature name="h"/>
+                    <feature name="m"/>
+                    <feature name="y"/>
+                    <feature name="r"/>
+                    <feature name="w"/>
+                    <feature name="*"/>
+                    <feature name="g"/>
+                    <feature name="z"/>
+                    <feature name="d"/>
+                    <feature name="b"/>
+                    <feature name="p"/>
+                </or>
+                <or mandatory="true" name="Vocals">
+                    <feature name="a"/>
+                    <feature name="i"/>
+                    <feature name="u"/>
+                    <feature name="e"/>
+                    <feature name="o"/>
+                </or>
+            </and>
+            <alt abstract="true" mandatory="true" name="Output">
+                <feature name="GUI"/>
+                <feature name="CLI"/>
+            </alt>
+            <or mandatory="true" name="Categories">
+                <and abstract="true" name="Vocabulary">
+                    <feature name="Learn Vocabulary"/>
+                    <feature name="Practice Vocabulary"/>
+                </and>
+                <and abstract="true" name="Syllables">
+                    <feature name="Learn Syllables"/>
+                    <feature name="Scrambler"/>
+                    <feature name="Show Syllables"/>
+                </and>
+            </or>
+            <and abstract="true" name="Gamification">
+                <or name="Game Type">
+                    <feature name="Mix"/>
+                    <feature name="Single"/>
+                </or>
+                <feature name="Scoring"/>
+                <feature name="Achievements"/>
+            </and>
+            <or name="Export">
+                <feature name="PDF"/>
+                <feature name="TXT"/>
+                <feature name="Print"/>
+            </or>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
