@@ -1,9 +1,9 @@
-= SPL2018.Project.06
+= SPL2018.Project.06: _Hirakanaji_ (Japanese Language Trainer)
 
 == Overview
 === Repository
 This repository contains my student project for the master lecture https://www.tu-braunschweig.de/isf/teaching/2013s/spl[_Software Product Lines_] (summer term 2018).
-The goal of this student project is to implement the different techniques of software product lines to a small software project with the help of https://featureide.github.io/[FeatureIDE].
+The goal of this student project is to implement different techniques of software product lines to a small software project with the help of https://featureide.github.io/[FeatureIDE].
 
 === Task
 * Topic
