@@ -23,16 +23,24 @@ The goal of this student project is to implement different techniques of softwar
 ** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
 
 === Domain
+The topic is about a Japanese language trainer with the working title "Hirakanaji".
+In this application the user will be able to learn the basic Japanese vocabulary and syllabaries (Hiragana and Katakana).
+Other possible modes may be e.g. some syllable scrambler for practicing your memory and writing skills or daily vocabulary trainer.
+The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hiragana-Scrambler[here].
 
 == Progress
-* [ ] 1 Domänenanalyse
-** [x] Choose domain for project -> Japanese Vocabulary Trainer
+* [x] 1 Domänenanalyse
+** [x] Choose domain for project -> Japanese Language Trainer
 ** [x] Create feature diagram
 *** [x] English language
 *** [x] Only alphabetical characters
 *** [x] Every feature may have a short description
-** [ ] Write short introduction to the domain
+** [x] Write short introduction to the domain
 ** [x] Init project
 *** [x] (Use Gradle)
 *** [x] Set up FeatureIDE project (Composer: Feature Modeling)
+
+== Ideas
+* Import Japanese-English vocabulary file
+* Dictionary with search function
 
