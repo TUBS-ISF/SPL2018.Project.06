@@ -22,6 +22,11 @@ The goal of this student project is to implement different techniques of softwar
     ** [ ] 2018/06/24 - 5 Feature-orientierte Programmierung
     ** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
 
+== Eclipse Import
+* File > Import... > Gradle > Existing Gradle Project
+    ** Alle Tasks werden damit importiert
+* Build: `gradlew build` im Root-Ordner
+
 == Application
 === Domain
 The topic is about a Japanese language trainer with the working title "Hirakanaji".
