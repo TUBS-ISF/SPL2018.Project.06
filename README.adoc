@@ -1,0 +1,48 @@
+= SPL2018.Project.06: _Hirakanaji_ (Japanese Language Trainer)
+
+== Overview
+=== Repository
+This repository contains my student project for the master lecture https://www.tu-braunschweig.de/isf/teaching/2013s/spl[_Software Product Lines_] (summer term 2018).
+The goal of this student project is to implement different techniques of software product lines to a small software project with the help of https://featureide.github.io/[FeatureIDE].
+
+=== Task
+* Topic
+** Software Product Lines
+
+* Requirements
+** Features
+*** Domain has at least 20 features
+*** 10 of them may be trivial (5-10 LOC)
+
+* Deadlines
+** [x] 2018/04/29 - 1 Domänenanalyse
+** [ ] 2018/05/13 - 2 Laufzeitvariabilität
+** [ ] 2018/05/27 - 3 Präprozessoren
+** [ ] 2018/06/10 - 4 Black-Box-Framework
+** [ ] 2018/06/24 - 5 Feature-orientierte Programmierung
+** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
+
+=== Domain
+The topic is about a Japanese language trainer with the working title "Hirakanaji".
+In this application the user will be able to learn the basic Japanese vocabulary and syllabaries (Hiragana and Katakana).
+Other possible modes may be e.g. some syllable scrambler for practicing your memory and writing skills or a daily vocabulary trainer.
+The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hiragana-Scrambler[here].
+
+== Progress
+* [x] 1 Domänenanalyse
+** [x] Choose domain for project -> Japanese Language Trainer
+** [ ] Create feature diagram
+*** [x] English language
+*** [x] Only alphabetical characters
+*** [x] Every feature may have a short description
+*** [ ] Create five configurations
+** [x] Write short introduction to the domain
+** [ ] Init project
+*** [x] (Use Gradle)
+*** [x] Set up FeatureIDE project (Composer: Feature Modeling)
+*** [ ] Every project should be inside a separate sub project
+
+== Ideas
+* Import Japanese-English vocabulary file
+* Dictionary with search function
+
