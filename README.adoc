@@ -32,12 +32,12 @@ The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hirag
 === Feature Model
 ==== Overview
 ==== Configurations
-* +default+: Basic web-application without gamification and export functionalities
-* +config1+: Local CLI application with basic Romaji scrambler functionality
-* +config2+: Local CLI application with basic Hiragana scrambler functionality
-* +config3+: Local CLI application with basic Katakana scrambler functionality
-* +config4+: Web-application with full scrambler functionality
-* +config5+: Pro web-application with all functionalities
+* `*default*` Basic web-application without gamification and export functionalities
+* `*config1*` Local CLI application with basic Romaji scrambler functionality
+* `*config2*` Local CLI application with basic Hiragana scrambler functionality
+* `*config3*` Local CLI application with basic Katakana scrambler functionality
+* `*config4*` Web-application with full scrambler functionality
+* `*config5*` Pro web-application with all functionalities
 
 == Progress
 * [x] 1 Domänenanalyse
