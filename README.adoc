@@ -35,6 +35,7 @@ The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hirag
 *** [x] English language
 *** [x] Only alphabetical characters
 *** [x] Every feature may have a short description
+*** [x] Add constraints
 *** [x] Create five configurations
 ** [x] Write short introduction to the domain
 ** [x] Init project

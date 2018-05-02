@@ -41,6 +41,5 @@
     <feature manual="selected" name="CLI"/>
     <feature automatic="selected" name="Categories"/>
     <feature automatic="selected" manual="selected" name="Syllables"/>
-    <feature automatic="selected" manual="selected" name="Scrambler"/>
-    <feature manual="selected" name="Variable Output Size"/>
+    <feature manual="selected" name="Scrambler"/>
 </configuration>

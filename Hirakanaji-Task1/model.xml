@@ -303,7 +303,159 @@ Adds the feature for a print dialogue in the current view
             </or>
         </and>
     </struct>
-    <constraints/>
+    <constraints>
+        <rule>
+            <description>
+The usage of CLI version needs Windows as OS
+</description>
+            <imp>
+                <disj>
+                    <var>Android</var>
+                    <var>Web</var>
+                </disj>
+                <not>
+                    <var>CLI</var>
+                </not>
+            </imp>
+        </rule>
+        <rule>
+            <description>
+With CLI it's only possible to use the Scrambler mode
+</description>
+            <imp>
+                <var>CLI</var>
+                <conj>
+                    <var>Scrambler</var>
+                    <not>
+                        <conj>
+                            <var>Vocabulary</var>
+                            <conj>
+                                <var>Learn Syllables</var>
+                                <conj>
+                                    <var>Show Syllables</var>
+                                    <conj>
+                                        <var>Variable Output Size</var>
+                                        <conj>
+                                            <var>Gamification</var>
+                                            <var>Export</var>
+                                        </conj>
+                                    </conj>
+                                </conj>
+                            </conj>
+                        </conj>
+                    </not>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <description>
+Gojuuon and Youon need at least one of the following vocals and consonants
+</description>
+            <imp>
+                <disj>
+                    <var>Gojuuon</var>
+                    <var>Youon</var>
+                </disj>
+                <conj>
+                    <disj>
+                        <var>a</var>
+                        <disj>
+                            <var>i</var>
+                            <disj>
+                                <var>u</var>
+                                <disj>
+                                    <var>e</var>
+                                    <var>o</var>
+                                </disj>
+                            </disj>
+                        </disj>
+                    </disj>
+                    <disj>
+                        <var>None</var>
+                        <disj>
+                            <var>k</var>
+                            <disj>
+                                <var>s</var>
+                                <disj>
+                                    <var>t</var>
+                                    <disj>
+                                        <var>n</var>
+                                        <disj>
+                                            <var>h</var>
+                                            <disj>
+                                                <var>m</var>
+                                                <disj>
+                                                    <var>y</var>
+                                                    <disj>
+                                                        <var>r</var>
+                                                        <disj>
+                                                            <var>w</var>
+                                                            <var>Special</var>
+                                                        </disj>
+                                                    </disj>
+                                                </disj>
+                                            </disj>
+                                        </disj>
+                                    </disj>
+                                </disj>
+                            </disj>
+                        </disj>
+                    </disj>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <description>
+Gojuuon with Dakuten and Youon with Dakuten need at least one of the following vocals and consonants
+</description>
+            <imp>
+                <disj>
+                    <var>Gojuuon with Dakuten</var>
+                    <var>Youon with Dakuten</var>
+                </disj>
+                <conj>
+                    <disj>
+                        <var>a</var>
+                        <disj>
+                            <var>i</var>
+                            <disj>
+                                <var>u</var>
+                                <disj>
+                                    <var>e</var>
+                                    <var>o</var>
+                                </disj>
+                            </disj>
+                        </disj>
+                    </disj>
+                    <disj>
+                        <var>g</var>
+                        <disj>
+                            <var>z</var>
+                            <disj>
+                                <var>d</var>
+                                <disj>
+                                    <var>b</var>
+                                    <var>p</var>
+                                </disj>
+                            </disj>
+                        </disj>
+                    </disj>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <description>
+Mix game mode needs both possible game modes in order to make sense
+</description>
+            <imp>
+                <var>Mix</var>
+                <conj>
+                    <var>Practice Vocabulary</var>
+                    <var>Scrambler</var>
+                </conj>
+            </imp>
+        </rule>
+    </constraints>
     <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
     <comments/>
     <featureOrder userDefined="false"/>
