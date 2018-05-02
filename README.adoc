@@ -35,12 +35,12 @@ The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hirag
 *** [x] English language
 *** [x] Only alphabetical characters
 *** [x] Every feature may have a short description
-*** [ ] Create five configurations
+*** [x] Create five configurations
 ** [x] Write short introduction to the domain
-** [ ] Init project
+** [x] Init project
 *** [x] (Use Gradle)
 *** [x] Set up FeatureIDE project (Composer: Feature Modeling)
-*** [ ] Every project should be inside a separate sub project
+*** [x] Every project should be inside a separate sub project
 
 == Ideas
 * Import Japanese-English vocabulary file
