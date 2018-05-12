@@ -7,41 +7,57 @@ The goal of this student project is to implement different techniques of softwar
 
 === Task
 * Topic
-** Software Product Lines
+    ** Software Product Lines
 
 * Requirements
-** Features
-*** Domain has at least 20 features
-*** 10 of them may be trivial (5-10 LOC)
+    ** Features
+        *** Domain has at least 20 features
+        *** 10 of them may be trivial (5-10 LOC)
 
 * Deadlines
-** [x] 2018/04/29 - 1 Domänenanalyse
-** [ ] 2018/05/13 - 2 Laufzeitvariabilität
-** [ ] 2018/05/27 - 3 Präprozessoren
-** [ ] 2018/06/10 - 4 Black-Box-Framework
-** [ ] 2018/06/24 - 5 Feature-orientierte Programmierung
-** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
+    ** [x] 2018/04/29 - 1 Domänenanalyse
+    ** [ ] 2018/05/13 - 2 Laufzeitvariabilität
+    ** [ ] 2018/05/27 - 3 Präprozessoren
+    ** [ ] 2018/06/10 - 4 Black-Box-Framework
+    ** [ ] 2018/06/24 - 5 Feature-orientierte Programmierung
+    ** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
 
+== Eclipse Import
+* File > Import... > Gradle > Existing Gradle Project
+    ** Alle Tasks werden damit importiert
+* Build: `gradlew build` im Root-Ordner
+
+== Application
 === Domain
 The topic is about a Japanese language trainer with the working title "Hirakanaji".
 In this application the user will be able to learn the basic Japanese vocabulary and syllabaries (Hiragana and Katakana).
 Other possible modes may be e.g. some syllable scrambler for practicing your memory and writing skills or a daily vocabulary trainer.
 The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hiragana-Scrambler[here].
 
+=== Feature Model
+==== Overview
+==== Configurations
+* `*default*` Basic web-application without gamification and export functionalities
+* `*config1*` Local CLI application with basic Romaji scrambler functionality
+* `*config2*` Local CLI application with basic Hiragana scrambler functionality
+* `*config3*` Local CLI application with basic Katakana scrambler functionality
+* `*config4*` Web-application with full scrambler functionality
+* `*config5*` Pro web-application with all functionalities
+
 == Progress
 * [x] 1 Domänenanalyse
-** [x] Choose domain for project -> Japanese Language Trainer
-** [ ] Create feature diagram
-*** [x] English language
-*** [x] Only alphabetical characters
-*** [x] Every feature may have a short description
-*** [x] Add constraints
-*** [x] Create five configurations
-** [x] Write short introduction to the domain
-** [x] Init project
-*** [x] (Use Gradle)
-*** [x] Set up FeatureIDE project (Composer: Feature Modeling)
-*** [x] Every project should be inside a separate sub project
+    ** [x] Choose domain for project -> Japanese Language Trainer
+    ** [x] Create feature diagram
+        *** [x] English language
+        *** [x] Only alphabetical characters
+        *** [x] Every feature may have a short description
+        *** [x] Add constraints
+        *** [x] Create five configurations
+    ** [x] Write short introduction to the domain
+    ** [x] Init project
+        *** [x] (Use Gradle)
+        *** [x] Set up FeatureIDE project (Composer: Feature Modeling)
+        *** [x] Every project should be inside a separate sub project
 
 == Ideas
 * Import Japanese-English vocabulary file
