@@ -1,4 +1,5 @@
 = SPL2018.Project.06: _Hirakanaji_ (Japanese Language Trainer)
+:imagesdir: resources/img
 
 == Overview
 === Repository
@@ -35,6 +36,8 @@ Other possible modes may be e.g. some syllable scrambler for practicing your mem
 The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hiragana-Scrambler[here].
 
 === Feature Model
+image::feature-model.png[Feature Model]
+
 ==== Overview
 ==== Configurations
 * `*default*` Basic web-application without gamification and export functionalities
