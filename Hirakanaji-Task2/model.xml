@@ -6,16 +6,16 @@
             <description>
 The name of the application
 </description>
-            <alt abstract="true" mandatory="true" name="OS">
+            <alt mandatory="true" name="OS">
                 <description>
 The operating system on which the application will run
 </description>
-                <feature name="Web">
+                <feature abstract="true" name="Web">
                     <description>
 Platform-independent web version
 </description>
                 </feature>
-                <feature name="Android">
+                <feature abstract="true" name="Android">
                     <description>
 Mobile version for Android
 </description>
@@ -26,7 +26,7 @@ Local client version on Windows
 </description>
                 </feature>
             </alt>
-            <and abstract="true" mandatory="true" name="Characters">
+            <and mandatory="true" name="Characters">
                 <description>
 Adds syllabaries with custom syllable sets. These syllable sets contain consonants and vocals
 </description>
@@ -39,7 +39,7 @@ Adds Japanese syllabary to the application
 Japanese syllabary used primarily for native or naturalised Japanese words and grammatical elements
 </description>
                     </feature>
-                    <feature name="Katakana">
+                    <feature abstract="true" name="Katakana">
                         <description>
 Japanese syllabary used primarily for foreign words and names
 </description>
@@ -191,11 +191,11 @@ Adds the basic vocal column 'o'
                     </feature>
                 </or>
             </and>
-            <alt abstract="true" mandatory="true" name="Output">
+            <alt mandatory="true" name="Output">
                 <description>
 The visual output of the application that is used
 </description>
-                <feature name="GUI">
+                <feature abstract="true" name="GUI">
                     <description>
 GUI output with visual elements and full application funcionality
 </description>
@@ -214,22 +214,22 @@ Adds application categories for the different application modes
                     <description>
 Category for vocabulary application modes
 </description>
-                    <feature name="Learn Vocabulary">
+                    <feature abstract="true" name="Learn Vocabulary">
                         <description>
 Adds the application mode for learning single vocabulary with its English translation
 </description>
                     </feature>
-                    <feature name="Practice Vocabulary">
+                    <feature abstract="true" name="Practice Vocabulary">
                         <description>
 Adds the application mode for practicing single vocabulary
 </description>
                     </feature>
                 </and>
-                <and abstract="true" name="Syllables">
+                <and name="Syllables">
                     <description>
 Category for syllables application modes
 </description>
-                    <feature name="Learn Syllables">
+                    <feature abstract="true" name="Learn Syllables">
                         <description>
 Adds the application mode for learning single syllables
 </description>
@@ -238,13 +238,13 @@ Adds the application mode for learning single syllables
                         <description>
 Adds the application mode for scrambling single syllables for practicing writing and reading skills
 </description>
-                        <feature name="Variable Output Size">
+                        <feature abstract="true" name="Variable Output Size">
                             <description>
 Adds the feature to change the output size of the Scrambler
 </description>
                         </feature>
                     </and>
-                    <feature name="Show Syllables">
+                    <feature abstract="true" name="Show Syllables">
                         <description>
 Adds the application mode for showing syllables for learning and look-up purposes
 </description>
@@ -255,47 +255,47 @@ Adds the application mode for showing syllables for learning and look-up purpose
                 <description>
 Adds the feature for gamification elements
 </description>
-                <or name="Game Type">
+                <or abstract="true" name="Game Type">
                     <description>
 Adds the feature for game type categories
 </description>
-                    <feature name="Mix">
+                    <feature abstract="true" name="Mix">
                         <description>
 Adds the feature for the game type 'Mix' to get different excercises
 </description>
                     </feature>
-                    <feature name="Single">
+                    <feature abstract="true" name="Single">
                         <description>
 Adds the feature for the game type 'Mix' to get a single excercise
 </description>
                     </feature>
                 </or>
-                <feature name="Scoring">
+                <feature abstract="true" name="Scoring">
                     <description>
 Adds the feature for a scoring system
 </description>
                 </feature>
-                <feature name="Achievements">
+                <feature abstract="true" name="Achievements">
                     <description>
 Adds the feature for an achievement system
 </description>
                 </feature>
             </and>
-            <or name="Export">
+            <or abstract="true" name="Export">
                 <description>
 Adds the feature for export functionalities
 </description>
-                <feature name="PDF">
+                <feature abstract="true" name="PDF">
                     <description>
 Adds the feature for a PDF export of the current view
 </description>
                 </feature>
-                <feature name="TXT">
+                <feature abstract="true" name="TXT">
                     <description>
 Adds the feature for a TXT export of the current view
 </description>
                 </feature>
-                <feature name="Print">
+                <feature abstract="true" name="Print">
                     <description>
 Adds the feature for a print dialogue in the current view
 </description>

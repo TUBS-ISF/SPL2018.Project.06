@@ -70,8 +70,8 @@ image::feature-model.png[Feature Model]
         *** [ ] Implement 2 features
         *** [ ] Possibility to switch features on/off with parameters in main method
     ** [ ] Modify feature model
-        *** [ ] Mark implemented features as "konkret"
-        *** [ ] Mark not implemented features as "abstrakt"
+        *** [x] Mark implemented features as "konkret"
+        *** [x] Mark not implemented features as "abstrakt"
         *** [ ] Color features
     ** [ ] Develop application
         *** [ ] Either as FeatureIDEProject (Composer: Runtime Parameters) or Java project
