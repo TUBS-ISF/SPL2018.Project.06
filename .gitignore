@@ -2,6 +2,9 @@
 # Compiled class file
 *.class
 
+# Directories #
+out/
+
 # Log file
 *.log
 
