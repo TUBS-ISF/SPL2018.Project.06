@@ -33,12 +33,14 @@ The goal of this student project is to implement different techniques of softwar
 The topic is about a Japanese language trainer with the working title "Hirakanaji".
 In this application the user will be able to learn the basic Japanese vocabulary and syllabaries (Hiragana and Katakana).
 Other possible modes may be e.g. some syllable scrambler for practicing your memory and writing skills or a daily vocabulary trainer.
-The basic idea for the domain is from https://github.com/dmitrij-drandarov/Hiragana-Scrambler[here].
+
+=== Sources
+The idea and basic sources are from https://github.com/dmitrij-drandarov/Hiragana-Scrambler[here].
 
 === Feature Model
+==== Overview
 image::feature-model.png[Feature Model]
 
-==== Overview
 ==== Configurations
 * `*default*` Basic web-application without gamification and export functionalities
 * `*config1*` Local CLI application with basic Romaji scrambler functionality
@@ -63,11 +65,11 @@ image::feature-model.png[Feature Model]
         *** [x] Every project should be inside a separate sub project
 
 * [ ] 2 Laufzeitvariabilität
-    ** [ ] Import existing project "Hiragana-Scrambler"
-        *** [ ] Import existing sources
-        *** [ ] Credit sources in README.adoc
+    ** [x] Import existing project "Hiragana-Scrambler"
+        *** [x] Import existing sources
+        *** [x] Credit sources in README.adoc
     ** [ ] Implement features
-        *** [ ] Implement 2 features
+        *** [x] Implement 2 features
         *** [ ] Possibility to switch features on/off with parameters in main method
     ** [ ] Modify feature model
         *** [x] Mark implemented features as "konkret"

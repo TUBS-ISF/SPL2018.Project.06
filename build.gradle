@@ -1,4 +1,4 @@
-group = 'de.tu-bs'
+group = 'de.tubs'
 version = '0.1'
 
 allprojects {
