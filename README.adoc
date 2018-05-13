@@ -64,17 +64,17 @@ image::feature-model.png[Feature Model]
         *** [x] Set up FeatureIDE project (Composer: Feature Modeling)
         *** [x] Every project should be inside a separate sub project
 
-* [ ] 2 Laufzeitvariabilität
+* [x] 2 Laufzeitvariabilität
     ** [x] Import existing project "Hiragana-Scrambler"
         *** [x] Import existing sources
         *** [x] Credit sources in README.adoc
     ** [x] Implement features
         *** [x] Implement 2 features
         *** [x] Possibility to switch features on/off with parameters in main method
-    ** [ ] Modify feature model
+    ** [x] Modify feature model
         *** [x] Mark implemented features as "konkret"
         *** [x] Mark not implemented features as "abstrakt"
-        *** [ ] Color features
+        *** [x] Color features
     ** [x] Develop application
         *** [x] Either as FeatureIDEProject (Composer: Runtime Parameters) or Java project
 
