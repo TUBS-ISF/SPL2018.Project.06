@@ -1,1 +1,2 @@
-include 'Hirakanaji-Task1'
+include 'Hirakanaji-Task1',
+        'Hirakanaji-Task2'

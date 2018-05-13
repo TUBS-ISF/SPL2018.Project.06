@@ -2,6 +2,9 @@
 # Compiled class file
 *.class
 
+# Directories #
+out/
+
 # Log file
 *.log
 
@@ -106,3 +109,4 @@ local.properties
 
 ### FeatureIDE ###
 .featureide/
+!Hirakanaji-Task*/.project
