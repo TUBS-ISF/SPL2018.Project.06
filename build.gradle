@@ -1,1 +1,8 @@
-apply plugin: 'java'
+group = 'de.tubs'
+version = '0.2'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
