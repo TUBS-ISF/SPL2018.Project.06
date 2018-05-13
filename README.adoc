@@ -17,7 +17,7 @@ The goal of this student project is to implement different techniques of softwar
 
 * Deadlines
     ** [x] 2018/04/29 - 1 Domänenanalyse
-    ** [ ] 2018/05/13 - 2 Laufzeitvariabilität
+    ** [x] 2018/05/13 - 2 Laufzeitvariabilität
     ** [ ] 2018/05/27 - 3 Präprozessoren
     ** [ ] 2018/06/10 - 4 Black-Box-Framework
     ** [ ] 2018/06/24 - 5 Feature-orientierte Programmierung
