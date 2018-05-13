@@ -6,7 +6,7 @@ package de.tubs.hirakanaji.core;
  */
 public class HiraganaDataSet {
 
-    public static final String[][] characters = new String[0][0];
+    public static final String[][] hiraganaChars = new String[0][0];
 
     public static final String[][] hiraganaData = new String[][] {
             {"あ", "い", "う", "え", "お"},

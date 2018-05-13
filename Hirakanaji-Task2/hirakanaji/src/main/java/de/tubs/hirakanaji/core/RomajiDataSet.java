@@ -6,7 +6,7 @@ package de.tubs.hirakanaji.core;
  */
 public class RomajiDataSet {
 
-    public static final String[][] characters = new String[0][0];
+    public static final String[][] romajiChars = new String[0][0];
 
     public static final String[][] romajiData = new String[][] {
             {"a", "i", "u", "e", "o"},
