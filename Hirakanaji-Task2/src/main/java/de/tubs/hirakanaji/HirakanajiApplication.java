@@ -13,26 +13,32 @@ import static de.tubs.hirakanaji.core.RomajiDataSet.*;
  * @since 13.05.2018
  */
 public class HirakanajiApplication {
+	
+	private static List<String> properties;
 
     public static void main(String[] args) {
-        List<String> list = Arrays.asList(args);
+        properties = Arrays.asList(args);
 
         // Scrambler (CLI)
-        if (list.contains("Scrambler")) {
+        if (properties.contains("Scrambler")) {
             String[][] dataSet;
 
-            if (list.contains("Romaji")) {
+            if (properties.contains("Romaji")) {
                 dataSet = Stream.of(romajiChars, romajiData, romajiExtraData)
                         .flatMap(Stream::of).toArray(String[][]::new);
                 printSyllables(dataSet);
             }
 
-            if (list.contains("Hiragana")) {
+            if (properties.contains("Hiragana")) {
                 dataSet = Stream.of(hiraganaChars, hiraganaData, hiraganaExtraData)
                         .flatMap(Stream::of).toArray(String[][]::new);
                 printSyllables(dataSet);
             }
         }
+    }
+    
+    public static List<String> getProperties() {
+    	return properties;
     }
 
     private static void printSyllables(String[][] dataSet) {
