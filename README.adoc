@@ -68,15 +68,15 @@ image::feature-model.png[Feature Model]
     ** [x] Import existing project "Hiragana-Scrambler"
         *** [x] Import existing sources
         *** [x] Credit sources in README.adoc
-    ** [ ] Implement features
+    ** [x] Implement features
         *** [x] Implement 2 features
-        *** [ ] Possibility to switch features on/off with parameters in main method
+        *** [x] Possibility to switch features on/off with parameters in main method
     ** [ ] Modify feature model
         *** [x] Mark implemented features as "konkret"
         *** [x] Mark not implemented features as "abstrakt"
         *** [ ] Color features
-    ** [ ] Develop application
-        *** [ ] Either as FeatureIDEProject (Composer: Runtime Parameters) or Java project
+    ** [x] Develop application
+        *** [x] Either as FeatureIDEProject (Composer: Runtime Parameters) or Java project
 
 == Ideas
 * Import Japanese-English vocabulary file
