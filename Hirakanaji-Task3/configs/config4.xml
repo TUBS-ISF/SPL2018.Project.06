@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Hirakanaji" />
+	<feature automatic="selected" name="OS" />
+	<feature manual="selected" name="Web" />
+	<feature automatic="unselected" name="Android" />
+	<feature automatic="unselected" name="Windows" />
+	<feature automatic="selected" name="Characters" />
+	<feature automatic="selected" name="Syllabary" />
+	<feature manual="selected" name="Hiragana" />
+	<feature manual="selected" name="Katakana" />
+	<feature manual="selected" name="Romaji" />
+	<feature automatic="selected" name="Syllable Sets" />
+	<feature manual="selected" name="Gojuuon" />
+	<feature manual="selected" name="Gojuuon with Dakuten" />
+	<feature manual="selected" name="Youon" />
+	<feature manual="selected" name="Youon with Dakuten" />
+	<feature automatic="selected" name="Consonants" />
+	<feature manual="selected" name="None" />
+	<feature manual="selected" name="k" />
+	<feature manual="selected" name="s" />
+	<feature manual="selected" name="t" />
+	<feature manual="selected" name="n" />
+	<feature manual="selected" name="h" />
+	<feature manual="selected" name="m" />
+	<feature manual="selected" name="y" />
+	<feature manual="selected" name="r" />
+	<feature manual="selected" name="w" />
+	<feature manual="selected" name="Special" />
+	<feature manual="selected" name="g" />
+	<feature manual="selected" name="z" />
+	<feature manual="selected" name="d" />
+	<feature manual="selected" name="b" />
+	<feature manual="selected" name="p" />
+	<feature automatic="selected" name="Vocals" />
+	<feature manual="selected" name="a" />
+	<feature manual="selected" name="i" />
+	<feature manual="selected" name="u" />
+	<feature manual="selected" name="e" />
+	<feature manual="selected" name="o" />
+	<feature automatic="selected" name="Output" />
+	<feature manual="selected" name="GUI" />
+	<feature automatic="unselected" name="CLI" />
+	<feature automatic="selected" name="Categories" />
+	<feature automatic="selected" manual="selected"
+		name="Syllables" />
+	<feature manual="selected" name="Learn Syllables" />
+	<feature automatic="selected" manual="selected"
+		name="Scrambler" />
+	<feature manual="selected" name="Variable Output Size" />
+	<feature manual="selected" name="Show Syllables" />
+</configuration>

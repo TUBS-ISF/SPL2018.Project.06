@@ -78,6 +78,23 @@ image::feature-model.png[Feature Model]
     ** [x] Develop application
         *** [x] Either as FeatureIDEProject (Composer: Runtime Parameters) or Java project
 
+* [ ] 3 Präprozessoren
+    ** [x] Copy source files from previous task
+    ** [ ] Implement features
+        *** [ ] Implement 2 features
+        *** [ ] Possibility to switch features on/off with preprocessors
+    ** [ ] Implement preprocessors (Antenna or Munge)
+    ** [ ] Test configurations and document errors in README
+    ** [ ] Modify feature model
+        *** [ ] Mark implemented features as "konkret"
+        *** [ ] Mark not implemented features as "abstrakt"
+
+* [ ] 4 Black-Box-Framework
+
+* [ ] 5 Feature-orientierte Programmierung
+
+* [ ] 6 Aspektorientierte Programmierung
+
 == Ideas
 * Import Japanese-English vocabulary file
 * Dictionary with search function
