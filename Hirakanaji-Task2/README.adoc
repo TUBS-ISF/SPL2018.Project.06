@@ -1,0 +1,18 @@
+= SPL2018.Project.06 - Hirakanaji-Task2
+
+== Progress
+* [x] 2 Laufzeitvariabilität
+    ** [x] Import existing project "Hiragana-Scrambler"
+        *** [x] Import existing sources
+        *** [x] Credit sources in README.adoc
+    ** [x] Implement features
+        *** [x] Implement 2 features
+        *** [x] Possibility to switch features on/off with parameters in main method
+    ** [x] Modify feature model
+        *** [x] Mark implemented features as "konkret"
+        *** [x] Mark not implemented features as "abstrakt"
+        *** [x] Color features
+    ** [x] Develop application
+        *** [x] Either as FeatureIDEProject (Composer: Runtime Parameters) or Java project
+
+== Bugs

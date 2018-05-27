@@ -1,0 +1,7 @@
+apply plugin: 'java'
+
+version = '0.3-SNAPSHOT'
+
+dependencies {
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0-RC1'
+}
