@@ -18,7 +18,7 @@ The goal of this student project is to implement different techniques of softwar
 * Deadlines
     ** [x] 2018/04/29 - 1 Domänenanalyse
     ** [x] 2018/05/13 - 2 Laufzeitvariabilität
-    ** [ ] 2018/05/27 - 3 Präprozessoren
+    ** [x] 2018/05/27 - 3 Präprozessoren
     ** [ ] 2018/06/10 - 4 Black-Box-Framework
     ** [ ] 2018/06/24 - 5 Feature-orientierte Programmierung
     ** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
@@ -53,6 +53,7 @@ image::feature-model.png[Feature Model]
 * `*config3*` Local CLI application with basic Katakana scrambler functionality
 * `*config4*` Web-application with full scrambler functionality
 * `*config5*` Pro web-application with all functionalities
+* `*config6*` Local CLI application with basic Hiragana scrambler functionality (Only Gojuuon + GojuuonWithDakuten)
 
 == Ideas
 * Import Japanese-English vocabulary file

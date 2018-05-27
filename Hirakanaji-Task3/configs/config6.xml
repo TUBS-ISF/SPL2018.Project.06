@@ -7,12 +7,10 @@
     <feature automatic="selected" manual="selected" name="Windows"/>
     <feature automatic="selected" name="Characters"/>
     <feature automatic="selected" name="Syllabary"/>
-    <feature manual="selected" name="Katakana"/>
+    <feature manual="selected" name="Hiragana"/>
     <feature automatic="selected" name="SyllableSets"/>
     <feature manual="selected" name="Gojuuon"/>
     <feature manual="selected" name="GojuuonWithDakuten"/>
-    <feature manual="selected" name="Youon"/>
-    <feature manual="selected" name="YouonWithDakuten"/>
     <feature automatic="selected" name="Consonants"/>
     <feature manual="selected" name="None"/>
     <feature manual="selected" name="k"/>

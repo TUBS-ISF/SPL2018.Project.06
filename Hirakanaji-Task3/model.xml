@@ -52,7 +52,7 @@ Romanization for Japanese syllables
 </description>
                     </feature>
                 </and>
-                <or mandatory="true" name="Syllable Sets">
+                <or mandatory="true" name="SyllableSets">
                     <description>
 Adds Japanese syllable sets to the application
 </description>
@@ -61,7 +61,7 @@ Adds Japanese syllable sets to the application
 Adds monographs
 </description>
                     </feature>
-                    <feature name="Gojuuon with Dakuten">
+                    <feature name="GojuuonWithDakuten">
                         <description>
 Adds monographs with diacritics
 </description>
@@ -71,7 +71,7 @@ Adds monographs with diacritics
 Adds digraphs
 </description>
                     </feature>
-                    <feature name="Youon with Dakuten">
+                    <feature name="YouonWithDakuten">
                         <description>
 Adds digraphs with diacritics
 </description>
@@ -217,13 +217,13 @@ Adds application categories for the different application modes
                     <description>
 Category for vocabulary application modes
 </description>
-                    <feature abstract="true" name="Learn Vocabulary">
+                    <feature abstract="true" name="LearnVocabulary">
                         <description>
 Adds the application mode for learning single vocabulary with its
 English translation
 </description>
                     </feature>
-                    <feature abstract="true" name="Practice Vocabulary">
+                    <feature abstract="true" name="PracticeVocabulary">
                         <description>
 Adds the application mode for practicing single vocabulary
 </description>
@@ -233,7 +233,7 @@ Adds the application mode for practicing single vocabulary
                     <description>
 Category for syllables application modes
 </description>
-                    <feature abstract="true" name="Learn Syllables">
+                    <feature abstract="true" name="LearnSyllables">
                         <description>
 Adds the application mode for learning single syllables
 </description>
@@ -244,7 +244,7 @@ Adds the application mode for scrambling single syllables for
 practicing writing and reading skills
 </description>
                     </feature>
-                    <feature abstract="true" name="Show Syllables">
+                    <feature abstract="true" name="ShowSyllables">
                         <description>
 Adds the application mode for showing syllables for learning and
 look-up purposes
@@ -256,7 +256,7 @@ look-up purposes
                 <description>
 Adds the feature for gamification elements
 </description>
-                <or abstract="true" name="Game Type">
+                <or abstract="true" name="GameType">
                     <description>
 Adds the feature for game type categories
 </description>
@@ -331,9 +331,9 @@ With CLI it's only possible to use the Scrambler mode
                         <conj>
                             <var>Vocabulary</var>
                             <conj>
-                                <var>Learn Syllables</var>
+                                <var>LearnSyllables</var>
                                 <conj>
-                                    <var>Show Syllables</var>
+                                    <var>ShowSyllables</var>
                                     <conj>
                                         <var>Gamification</var>
                                         <var>Export</var>
@@ -409,8 +409,8 @@ following vocals and consonants
 </description>
             <imp>
                 <disj>
-                    <var>Gojuuon with Dakuten</var>
-                    <var>Youon with Dakuten</var>
+                    <var>GojuuonWithDakuten</var>
+                    <var>YouonWithDakuten</var>
                 </disj>
                 <conj>
                     <disj>
@@ -449,7 +449,7 @@ Mix game mode needs both possible game modes in order to make sense
             <imp>
                 <var>Mix</var>
                 <conj>
-                    <var>Practice Vocabulary</var>
+                    <var>PracticeVocabulary</var>
                     <var>Scrambler</var>
                 </conj>
             </imp>
