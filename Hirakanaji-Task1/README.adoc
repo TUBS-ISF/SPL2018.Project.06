@@ -1,0 +1,18 @@
+= SPL2018.Project.06 - Hirakanaji-Task1
+
+== Progress
+* [x] 1 Domänenanalyse
+    ** [x] Choose domain for project -> Japanese Language Trainer
+    ** [x] Create feature diagram
+        *** [x] English language
+        *** [x] Only alphabetical characters
+        *** [x] Every feature may have a short description
+        *** [x] Add constraints
+        *** [x] Create five configurations
+    ** [x] Write short introduction to the domain
+    ** [x] Init project
+        *** [x] (Use Gradle)
+        *** [x] Set up FeatureIDE project (Composer: Feature Modeling)
+        *** [x] Every project should be inside a separate sub project
+
+== Bugs

@@ -1,0 +1,16 @@
+= SPL2018.Project.06 - Hirakanaji-Task3
+
+== Progress
+* [ ] 3 Präprozessoren
+    ** [x] Copy source files from previous task
+    ** [ ] Implement features
+        *** [ ] Implement 2 features
+        *** [ ] Possibility to switch features on/off with preprocessors
+    ** [ ] Implement preprocessors (Antenna or Munge)
+    ** [ ] Test configurations and document errors in README
+    ** [ ] Modify feature model
+        *** [ ] Mark implemented features as "konkret"
+        *** [ ] Mark not implemented features as "abstrakt"
+
+== Bugs
+* Antenna: Wenn ein konkretes Feature ein Sub-Feature hat, das nicht angehakt ist (sodass bei dem konkreten Feature statt einem Haken ein gefülltes Quadrat angezeigt wird), dann wird es nicht als aktiviertes Feature in der Konfiguration durch Antenna erkannt (<feature automatic="selected" manual="selected" name="Scrambler"/>). Oder es hat etwas mit dem Constraint zu tun?

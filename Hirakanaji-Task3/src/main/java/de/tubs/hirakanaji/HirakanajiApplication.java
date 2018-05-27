@@ -12,33 +12,36 @@ import static de.tubs.hirakanaji.core.RomajiDataSet.*;
  * @author lisa-rosenberg
  * @since 13.05.2018
  */
+@SuppressWarnings("Duplicates")
 public class HirakanajiApplication {
-	
-	private static List<String> properties;
+
+    private static List<String> properties;
 
     public static void main(String[] args) {
         properties = Arrays.asList(args);
 
-        // Scrambler (CLI)
-        if (properties.contains("Scrambler")) {
-            String[][] dataSet;
+        /* Scrambler (CLI) */
+        
+        // #if CLI
+	    String[][] dataSet;
+	        
+	    // #if Romaji
+	    dataSet = Stream.of(romajiChars, romajiData, romajiExtraData)
+	            .flatMap(Stream::of).toArray(String[][]::new);
+	    printSyllables(dataSet);
+	    // #endif
+	        
+	    // #if Hiragana
+//@	    dataSet = Stream.of(hiraganaChars, hiraganaData, hiraganaExtraData)
+//@	            .flatMap(Stream::of).toArray(String[][]::new);
+//@	    printSyllables(dataSet);
+	    // #endif
+	    // #endif
 
-            if (properties.contains("Romaji")) {
-                dataSet = Stream.of(romajiChars, romajiData, romajiExtraData)
-                        .flatMap(Stream::of).toArray(String[][]::new);
-                printSyllables(dataSet);
-            }
-
-            if (properties.contains("Hiragana")) {
-                dataSet = Stream.of(hiraganaChars, hiraganaData, hiraganaExtraData)
-                        .flatMap(Stream::of).toArray(String[][]::new);
-                printSyllables(dataSet);
-            }
-        }
     }
-    
+
     public static List<String> getProperties() {
-    	return properties;
+        return properties;
     }
 
     private static void printSyllables(String[][] dataSet) {
@@ -52,7 +55,7 @@ public class HirakanajiApplication {
         for (int i = 0; i < wordCount; i++) {
             for (int j = 0; j < random.nextInt(minSyllableCount, maxSyllableCount + 1); j++) {
                 System.out.print(dataSet[syllable = random.nextInt(0, dataSet.length)]
-                                              [random.nextInt(0, dataSet[syllable].length)]);
+                        [random.nextInt(0, dataSet[syllable].length)]);
             }
             System.out.println(/*"\n"*/);
         }
