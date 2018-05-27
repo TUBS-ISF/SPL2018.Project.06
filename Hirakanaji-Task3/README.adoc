@@ -6,7 +6,7 @@
     ** [ ] Implement features
         *** [ ] Implement 2 features
         *** [ ] Possibility to switch features on/off with preprocessors
-    ** [ ] Implement preprocessors (Antenna or Munge)
+    ** [x] Implement preprocessors (Antenna or Munge)
     ** [ ] Test configurations and document errors in README
     ** [ ] Modify feature model
         *** [ ] Mark implemented features as "konkret"

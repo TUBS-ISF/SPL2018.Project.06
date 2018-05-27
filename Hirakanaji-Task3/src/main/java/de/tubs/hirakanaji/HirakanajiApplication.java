@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
-import static de.tubs.hirakanaji.core.HiraganaDataSet.*;
 import static de.tubs.hirakanaji.core.RomajiDataSet.*;
 
 /**
@@ -26,16 +25,22 @@ public class HirakanajiApplication {
 	    String[][] dataSet;
 	        
 	    // #if Romaji
-	    dataSet = Stream.of(romajiChars, romajiData, romajiExtraData)
+	    dataSet = Stream.of(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten)
 	            .flatMap(Stream::of).toArray(String[][]::new);
 	    printSyllables(dataSet);
 	    // #endif
 	        
 	    // #if Hiragana
-//@	    dataSet = Stream.of(hiraganaChars, hiraganaData, hiraganaExtraData)
+//@	    dataSet = Stream.of(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten)
 //@	            .flatMap(Stream::of).toArray(String[][]::new);
 //@	    printSyllables(dataSet);
 	    // #endif
+
+        // #if Katakana
+//@	    dataSet = Stream.of(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten)
+//@	            .flatMap(Stream::of).toArray(String[][]::new);
+//@	    printSyllables(dataSet);
+        // #endif
 	    // #endif
 
     }

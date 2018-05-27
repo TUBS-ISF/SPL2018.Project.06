@@ -8,55 +8,46 @@ public class RomajiDataSet {
 
     public static final String[][] romajiChars = new String[0][0];
 
-    public static final String[][] romajiData = new String[][] {
+    public static final String[][] romajiGojuuon = new String[][] {
             {"a", "i", "u", "e", "o"},
 
             {"ka", "ki", "ku", "ke", "ko"},
-            {"ga", "gi", "gu", "ge", "go"},
-
             {"sa", "shi", "su", "se", "so"},
-            {"za", "ji", "zu", "ze", "zo"},
-
             {"ta", "chi", "tsu", "te", "to"},
-            {"da", "ji", "zu", "de", "do"},
-
             {"na", "ni", "nu", "ne", "no"},
-
             {"ha", "hi", "fu", "he", "ho"},
-            {"ba", "bi", "bu", "be", "bo"},
-            {"pa", "pi", "pu", "pe", "po"},
-
             {"ma", "mi", "mu", "me", "mo"},
-
             {"ya",       "yu",       "yo"},
-
             {"ra", "ri", "ru", "re", "ro"},
-
             {"wa",                   "wo"},
 
             {"n"},
     };
 
-    public static final String[][] romajiExtraData = new String[][] {
+    public static final String[][] romajiGojuuonDakuten = new String[][] {
+            {"ga", "gi", "gu", "ge", "go"},
+            {"za", "ji", "zu", "ze", "zo"},
+            {"da", "ji", "zu", "de", "do"},
+            {"ba", "bi", "bu", "be", "bo"},
+            {"pa", "pi", "pu", "pe", "po"},
+    };
+
+    public static final String[][] romajiYouon = new String[][] {
             {"kya", "kyu",        "kyo"},
-            {"gya", "gyu",        "gyo"},
-
+            {"sha", "shu", "she", "sho"},
+            {"cha", "chu", "che", "cho"},
             {"nya", "nyu",        "nyo"},
-
             {"hya", "hyu",        "hyo"},
+            {"mya", "myu",        "myo"},
+            {"rya", "ryu",        "ryo"},
+    };
 
+    public static final String[][] romajiYouonDakuten = new String[][] {
+            {"ja",  "ju",  "je",  "jo" },
+            {"ja",  "ju",  "je",  "jo" },
+            {"gya", "gyu",        "gyo"},
             {"bya", "byu",        "byo"},
             {"pya", "pyu",        "pyo"},
-
-            {"mya", "myu",        "myo"},
-
-            {"rya", "ryu",        "ryo"},
-
-            {"ja",  "ju",  "je",  "jo" },
-
-            {"cha", "chu", "che", "cho"},
-
-            {"sha", "shu", "she", "sho"},
     };
 
 }
