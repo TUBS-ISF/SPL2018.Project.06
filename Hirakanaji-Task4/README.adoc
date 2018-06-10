@@ -3,6 +3,7 @@
 == Progress
 * [ ] 4 Black-Box-Framework
     ** [x] Copy source files from previous task
+        ** [x] Remove Antenna code
     ** [ ] Implement features
             *** [ ] Implement 2 new features
             *** [ ] Possibility to switch features on/off
@@ -14,3 +15,5 @@
     ** [ ] Document errors and bugs
 
 == Bugs
+* Exception when applying now a different FeatureIDE composition tool
+    * Plug-in "de.ovgu.featureide.ui" was unable to instantiate

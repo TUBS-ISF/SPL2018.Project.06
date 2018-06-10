@@ -21,79 +21,59 @@ public class HirakanajiApplication {
     public static void main(String[] args) {
         properties = Arrays.asList(args);
 
-        /* Scrambler (CLI) */
-        // "#if CLI" should be "#if Scrambler" -> see README.adoc for further information
-        
-        // #if CLI
+        /* Scrambler */
         String[][] dataSet;
 
-        // #if Romaji
-//@        dataSet = Stream.of(romajiChars)
-//@            .flatMap(Stream::of).toArray(String[][]::new);
-        // #if Gojuuon
-//@        dataSet = Stream.of(dataSet, romajiGojuuon)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if GojuuonWithDakuten
-//@        dataSet = Stream.of(dataSet, romajiGojuuonDakuten)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if Youon
-//@        dataSet = Stream.of(dataSet, romajiYouon)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if YouonWithDakuten
-//@        dataSet = Stream.of(dataSet, romajiYouonDakuten)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-//@        printSyllables(dataSet);
-        // #endif
+        // Romaji
+        dataSet = Stream.of(romajiChars)
+            .flatMap(Stream::of).toArray(String[][]::new);
+        // Romaji - Gojuuon
+        dataSet = Stream.of(dataSet, romajiGojuuon)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Romaji - GojuuonWithDakuten
+        dataSet = Stream.of(dataSet, romajiGojuuonDakuten)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Romaji - Youon
+        dataSet = Stream.of(dataSet, romajiYouon)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Romaji - YouonWithDakuten
+        dataSet = Stream.of(dataSet, romajiYouonDakuten)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        printSyllables(dataSet);
 
-        // #if Hiragana
+        // Hiragana
         dataSet = Stream.of(hiraganaChars)
-        .flatMap(Stream::of).toArray(String[][]::new);
-        // #if Gojuuon
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Hiragana - Gojuuon
         dataSet = Stream.of(dataSet, hiraganaGojuuon)
                 .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if GojuuonWithDakuten
+        // Hiragana - GojuuonWithDakuten
         dataSet = Stream.of(dataSet, hiraganaGojuuonDakuten)
                 .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if Youon
-//@        dataSet = Stream.of(dataSet, hiraganaYouon)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if YouonWithDakuten
-//@        dataSet = Stream.of(dataSet, hiraganaYouonDakuten)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
+        // Hiragana - Youon
+        dataSet = Stream.of(dataSet, hiraganaYouon)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Hiragana - YouonWithDakuten
+            dataSet = Stream.of(dataSet, hiraganaYouonDakuten)
+                    .flatMap(Stream::of).toArray(String[][]::new);
         printSyllables(dataSet);
-        // #endif
 
-        // #if Katakana
-//@        dataSet = Stream.of(katakanaChars)
-//@	            .flatMap(Stream::of).toArray(String[][]::new);
-        // #if Gojuuon
-//@        dataSet = Stream.of(dataSet, katakanaGojuuon)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if GojuuonWithDakuten
-//@        dataSet = Stream.of(dataSet, katakanaGojuuonDakuten)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if Youon
-//@        dataSet = Stream.of(dataSet, katakanaYouon)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-        // #if YouonWithDakuten
-//@        dataSet = Stream.of(dataSet, katakanaYouonDakuten)
-//@                .flatMap(Stream::of).toArray(String[][]::new);
-        // #endif
-//@        printSyllables(dataSet);
-        // #endif
-	    // #endif
-
+        // Katakana
+        dataSet = Stream.of(katakanaChars)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Katakana - Gojuuon
+        dataSet = Stream.of(dataSet, katakanaGojuuon)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Katakana - GojuuonWithDakuten
+        dataSet = Stream.of(dataSet, katakanaGojuuonDakuten)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Katakana - Youon
+        dataSet = Stream.of(dataSet, katakanaYouon)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        // Katakana - YouonWithDakuten
+        dataSet = Stream.of(dataSet, katakanaYouonDakuten)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        printSyllables(dataSet);
     }
 
     public static List<String> getProperties() {
