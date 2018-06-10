@@ -110,3 +110,4 @@ local.properties
 ### FeatureIDE ###
 .featureide/
 !Hirakanaji-Task*/.project
+/*/.gitignore

@@ -27,6 +27,7 @@ The goal of this student project is to implement different techniques of softwar
     ** link:Hirakanaji-Task1/README.adoc[README.adoc - Hirakanaji-Task1]
     ** link:Hirakanaji-Task2/README.adoc[README.adoc - Hirakanaji-Task2]
     ** link:Hirakanaji-Task3/README.adoc[README.adoc - Hirakanaji-Task3]
+    ** link:Hirakanaji-Task4/README.adoc[README.adoc - Hirakanaji-Task4]
 
 == Eclipse Import
 * File > Import... > Gradle > Existing Gradle Project
