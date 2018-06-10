@@ -4,23 +4,12 @@
  */
 public class HirakanajiApplication {
 
-    private static void startScrambler() {
-        String[][] dataSet;
-        // Romaji
-        dataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
-        printSyllables(dataSet);
+    private static Logger logger = LoggerFactory.getLogger("Hirakanaji");
 
-        // Hiragana
-        dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-        printSyllables(dataSet);
-
-        // Katakana
-        dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
-        printSyllables(dataSet);
-    }
+    private static List<String> properties;
 
     private static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
-                                   String[][] youon, String[][] youonDakuten) {
+                                         String[][] youon, String[][] youonDakuten) {
         String[][] dataSet;
         dataSet = Stream.of(chars)
                 .flatMap(Stream::of).toArray(String[][]::new);
@@ -37,6 +26,10 @@ public class HirakanajiApplication {
         dataSet = Stream.of(dataSet, youonDakuten)
                 .flatMap(Stream::of).toArray(String[][]::new);
         return dataSet;
+    }
+
+    public static List<String> getProperties() {
+        return properties;
     }
 
     private static void printSyllables(String[][] dataSet) {

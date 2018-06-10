@@ -9,6 +9,7 @@ public class HirakanajiApplication {
 
         // Hiragana
         dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
+        printSyllables(dataSet);
     }
 
     private static void startSyllableTrainer() {
@@ -16,7 +17,6 @@ public class HirakanajiApplication {
 
         // Hiragana
         dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-
         askQuestions(dataSet);
     }
 }
