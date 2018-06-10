@@ -1,7 +1,9 @@
 package de.tubs.hirakanaji;
 
-import java.util.Arrays;
-import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
@@ -13,67 +15,55 @@ import static de.tubs.hirakanaji.core.KatakanaDataSet.*;
  * @author lisa-rosenberg
  * @since 13.05.2018
  */
-@SuppressWarnings("Duplicates")
 public class HirakanajiApplication {
+
+    private static Logger logger = LoggerFactory.getLogger("Hirakanaji");
 
     private static List<String> properties;
 
     public static void main(String[] args) {
         properties = Arrays.asList(args);
 
-        /* Scrambler */
-        String[][] dataSet;
+        /* Learn Syllables */
+        startSyllableTrainer();
 
+        /* Scrambler */
+        startScrambler();
+    }
+
+    private static void startScrambler() {
+        String[][] dataSet;
         // Romaji
-        dataSet = Stream.of(romajiChars)
-            .flatMap(Stream::of).toArray(String[][]::new);
-        // Romaji - Gojuuon
-        dataSet = Stream.of(dataSet, romajiGojuuon)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Romaji - GojuuonWithDakuten
-        dataSet = Stream.of(dataSet, romajiGojuuonDakuten)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Romaji - Youon
-        dataSet = Stream.of(dataSet, romajiYouon)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Romaji - YouonWithDakuten
-        dataSet = Stream.of(dataSet, romajiYouonDakuten)
-                .flatMap(Stream::of).toArray(String[][]::new);
+        dataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
         printSyllables(dataSet);
 
         // Hiragana
-        dataSet = Stream.of(hiraganaChars)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Hiragana - Gojuuon
-        dataSet = Stream.of(dataSet, hiraganaGojuuon)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Hiragana - GojuuonWithDakuten
-        dataSet = Stream.of(dataSet, hiraganaGojuuonDakuten)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Hiragana - Youon
-        dataSet = Stream.of(dataSet, hiraganaYouon)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Hiragana - YouonWithDakuten
-            dataSet = Stream.of(dataSet, hiraganaYouonDakuten)
-                    .flatMap(Stream::of).toArray(String[][]::new);
+        dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
         printSyllables(dataSet);
 
         // Katakana
-        dataSet = Stream.of(katakanaChars)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Katakana - Gojuuon
-        dataSet = Stream.of(dataSet, katakanaGojuuon)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Katakana - GojuuonWithDakuten
-        dataSet = Stream.of(dataSet, katakanaGojuuonDakuten)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Katakana - Youon
-        dataSet = Stream.of(dataSet, katakanaYouon)
-                .flatMap(Stream::of).toArray(String[][]::new);
-        // Katakana - YouonWithDakuten
-        dataSet = Stream.of(dataSet, katakanaYouonDakuten)
-                .flatMap(Stream::of).toArray(String[][]::new);
+        dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
         printSyllables(dataSet);
+    }
+
+    private static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
+                                   String[][] youon, String[][] youonDakuten) {
+        String[][] dataSet;
+        dataSet = Stream.of(chars)
+                .flatMap(Stream::of).toArray(String[][]::new);
+
+        dataSet = Stream.of(dataSet, gojuuon)
+                .flatMap(Stream::of).toArray(String[][]::new);
+
+        dataSet = Stream.of(dataSet, gojuuonDakuten)
+                .flatMap(Stream::of).toArray(String[][]::new);
+
+        dataSet = Stream.of(dataSet, youon)
+                .flatMap(Stream::of).toArray(String[][]::new);
+
+        dataSet = Stream.of(dataSet, youonDakuten)
+                .flatMap(Stream::of).toArray(String[][]::new);
+        return dataSet;
     }
 
     public static List<String> getProperties() {
@@ -89,12 +79,63 @@ public class HirakanajiApplication {
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
         for (int i = 0; i < wordCount; i++) {
+            String line = null;
             for (int j = 0; j < random.nextInt(minSyllableCount, maxSyllableCount + 1); j++) {
-                System.out.print(dataSet[syllable = random.nextInt(0, dataSet.length)]
-                        [random.nextInt(0, dataSet[syllable].length)]);
+                if (line == null) {
+                    line = dataSet[syllable = random.nextInt(0, dataSet.length)]
+                            [random.nextInt(0, dataSet[syllable].length)];
+                } else {
+                    line += dataSet[syllable = random.nextInt(0, dataSet.length)]
+                            [random.nextInt(0, dataSet[syllable].length)];
+                }
             }
-            System.out.println(/*"\n"*/);
+            logger.info(line);
         }
     }
 
+    private static void startSyllableTrainer() {
+        String[][] dataSet;
+        int rounds = 10;
+
+        // Hiragana
+        dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
+//        // Katakana
+//        dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
+        String[][] romajiDataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
+
+        for (int round = 0; round <= rounds; round++) {
+            int row = ThreadLocalRandom.current().nextInt(0, dataSet.length);
+            int col = ThreadLocalRandom.current().nextInt(0, dataSet[row].length);
+
+            logger.info("Which romaji syllable is this one?");
+            logger.info(dataSet[row][col]);
+            String input = getUserInput();
+            int[] romajiIndex = searchForSyllable(input);
+            if (romajiIndex.length == 0) {
+                logger.info("Romaji syllable not found. Correct answer was {}.", romajiDataSet[row][col]);
+            }  else if (romajiIndex[0] == row && romajiIndex[1] == col) {
+                logger.info("Correct!");
+            } else {
+                logger.info("Wrong! It's {}.", romajiDataSet[row][col]);
+            }
+        }
+    }
+
+    private static String getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
+    private static int[] searchForSyllable(String input) {
+        String[][] romajiDataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
+
+        for (int row = 0; row < romajiDataSet.length; row++) {
+            for (int col = 0; col < romajiDataSet[row].length; col++) {
+                if (romajiDataSet[row][col].equals(input)) {
+                    return new int[]{row, col};
+                }
+            }
+        }
+        return new int[]{};
+    }
 }

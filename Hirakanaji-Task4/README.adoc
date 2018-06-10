@@ -3,9 +3,9 @@
 == Progress
 * [ ] 4 Black-Box-Framework
     ** [x] Copy source files from previous task
-        ** [x] Remove Antenna code
-    ** [ ] Implement features
-            *** [ ] Implement 2 new features
+            *** [x] Remove Antenna code
+    ** [x] Implement features
+            *** [x] Implement 2 new features
             *** [ ] Possibility to switch features on/off
     ** [ ] Modify feature model
             *** [ ] Mark implemented features as "konkret"

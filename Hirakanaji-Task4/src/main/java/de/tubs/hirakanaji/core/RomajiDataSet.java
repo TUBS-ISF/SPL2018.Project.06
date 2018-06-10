@@ -43,9 +43,9 @@ public class RomajiDataSet {
     };
 
     public static final String[][] romajiYouonDakuten = new String[][] {
-            {"ja",  "ju",  "je",  "jo" },
-            {"ja",  "ju",  "je",  "jo" },
             {"gya", "gyu",        "gyo"},
+            {"ja",  "ju",  "je",  "jo" },
+            {"ja",  "ju",  "je",  "jo" },
             {"bya", "byu",        "byo"},
             {"pya", "pyu",        "pyo"},
     };
