@@ -47,7 +47,7 @@ public class HirakanajiApplication {
     }
 
     private static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
-                                   String[][] youon, String[][] youonDakuten) {
+                                         String[][] youon, String[][] youonDakuten) {
         String[][] dataSet;
         dataSet = Stream.of(chars)
                 .flatMap(Stream::of).toArray(String[][]::new);
@@ -79,28 +79,29 @@ public class HirakanajiApplication {
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
         for (int i = 0; i < wordCount; i++) {
-            String line = null;
+            StringBuilder line = new StringBuilder(maxSyllableCount);
             for (int j = 0; j < random.nextInt(minSyllableCount, maxSyllableCount + 1); j++) {
-                if (line == null) {
-                    line = dataSet[syllable = random.nextInt(0, dataSet.length)]
-                            [random.nextInt(0, dataSet[syllable].length)];
-                } else {
-                    line += dataSet[syllable = random.nextInt(0, dataSet.length)]
-                            [random.nextInt(0, dataSet[syllable].length)];
-                }
+                line.append(dataSet[syllable = random.nextInt(0, dataSet.length)]
+                        [random.nextInt(0, dataSet[syllable].length)]);
             }
-            logger.info(line);
+            logger.info(line.toString());
         }
     }
 
     private static void startSyllableTrainer() {
         String[][] dataSet;
-        int rounds = 10;
 
         // Hiragana
         dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-//        // Katakana
-//        dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
+        askQuestions(dataSet);
+
+        // Katakana
+        dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
+        askQuestions(dataSet);
+    }
+
+    private static void askQuestions(String[][] dataSet) {
+        int rounds = 10;
         String[][] romajiDataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
 
         for (int round = 0; round <= rounds; round++) {
