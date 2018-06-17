@@ -3,15 +3,13 @@ package de.tubs.hirakanaji;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
+import static de.tubs.hirakanaji.core.RomajiDataSet.*;
 import static de.tubs.hirakanaji.core.HiraganaDataSet.*;
 import static de.tubs.hirakanaji.core.KatakanaDataSet.*;
-import static de.tubs.hirakanaji.core.RomajiDataSet.*;
 
 /**
  * @author lisa-rosenberg

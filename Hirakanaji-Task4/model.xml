@@ -233,7 +233,7 @@ Adds the application mode for practicing single vocabulary
                     <description>
 Category for syllables application modes
 </description>
-                    <feature name="LearnSyllables">
+                    <feature abstract="true" name="LearnSyllables">
                         <description>
 Adds the application mode for learning single syllables
 </description>

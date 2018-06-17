@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Hirakanaji-Task4</name>
+	<name>Hirakanaji-Task3</name>
 	<comment>Project Hirakanaji-Task4 created by Buildship.</comment>
 	<projects>
 	</projects>
@@ -14,7 +14,7 @@
 				</dictionary>
 				<dictionary>
 					<key>composer</key>
-					<value>de.ovgu.featureide.composer.featurehouse</value>
+					<value>de.ovgu.featureide.preprocessor.antenna</value>
 				</dictionary>
 				<dictionary>
 					<key>equations</key>
