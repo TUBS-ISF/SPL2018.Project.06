@@ -12,10 +12,6 @@ public class Scrambler implements GameMode{
 
     private static Logger logger = LoggerFactory.getLogger(Scrambler.class.getName());
 
-    public static void startScrambler(String[][] syllabaryDataSet, String[][] romajiDataSet) {
-        printSyllables(syllabaryDataSet, romajiDataSet);
-    }
-
     private static void printSyllables(String[][] dataSet, String[][] romajiDataSet) {
         logger.info("syllabary | romaji");
         String[][] chosenDataSet;
@@ -42,4 +38,13 @@ public class Scrambler implements GameMode{
         }
     }
 
+    @Override
+    public void start(String[][] syllabaryDataSet, String[][] romajiDataSet) {
+        printSyllables(syllabaryDataSet, romajiDataSet);
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
 }

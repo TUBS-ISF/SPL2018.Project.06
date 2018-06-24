@@ -10,8 +10,8 @@ task jarSyllableTrainer(type: Jar) {
     destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
 
     from(sourceSets.main.output) {
-        include '**/hiragana/Gojuuon.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Hiragana-Gojuuon'
+        include '**/SylllableTrainer.*'
+        include 'META-INF/services/de.tubs.hirakanaji.core.GameMode-SyllableTrainer'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -22,7 +22,7 @@ task jarScrambler(type: Jar) {
     destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
 
     from(sourceSets.main.output) {
-        include '**/hiragana/GojuuonDakuten.*'
+        include '**/Scrambler.*'
         include 'META-INF/services/de.tubs.hirakanaji.gamemodes.GameMode-Scrambler'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }

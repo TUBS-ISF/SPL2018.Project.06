@@ -1,5 +1,8 @@
 package de.tubs.hirakanaji.core;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,12 +14,12 @@ public class DataSetLoader {
     private DataSetLoader() {}
     
     private static Map<String, DataSet> dataSets;
+    private static Logger logger = LoggerFactory.getLogger(DataSetLoader.class.getName());
 
     public static void loadDataSets() {
         final Map<String, DataSet> loadedDataSets = new HashMap<>();
 
         File loc = new File("Hirakanaji-Task4" + File.separatorChar + "plugins");
-        System.out.println(loc.exists());
 
         File[] flist = loc.listFiles(file -> file.getPath().toLowerCase().contains("-dataset-"));
         URL[] urls = new URL[Objects.requireNonNull(flist).length];
@@ -24,7 +27,7 @@ public class DataSetLoader {
             try {
                 urls[i] = flist[i].toURI().toURL();
             } catch (MalformedURLException e) {
-                System.out.println("fehler");
+                logger.info("Fehler");
             }
         }
         URLClassLoader ucl = new URLClassLoader(urls);
@@ -35,7 +38,7 @@ public class DataSetLoader {
         for (DataSet dataSet : serviceLoader) {
             String dataSetName = dataSet.getClass().getName();
             loadedDataSets.put(dataSetName, dataSet);
-            System.out.println("Loaded dataset: " + dataSetName);
+            logger.info("Loaded dataset: {}", dataSetName);
         }
 
         dataSets = loadedDataSets;

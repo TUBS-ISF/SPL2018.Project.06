@@ -12,10 +12,6 @@ public class SyllableTrainer implements GameMode {
 
     private static Logger logger = LoggerFactory.getLogger(SyllableTrainer.class.getName());
 
-    public static void startSyllableTrainer(String[][] syllabaryDataSet, String[][] romajiDataSet) {
-        askQuestions(syllabaryDataSet, romajiDataSet);
-    }
-
     private static void askQuestions(String[][] syllabaryDataSet, String[][] romajiDataSet) {
         int rounds = 10;
 
@@ -42,7 +38,7 @@ public class SyllableTrainer implements GameMode {
 
     @Override
     public void start(String[][] syllabaryDataSet, String[][] romajiDataSet) {
-
+        askQuestions(syllabaryDataSet, romajiDataSet);
     }
 
     @Override
