@@ -1,10 +1,12 @@
 apply plugin: 'java'
 
-version = '0.4-SNAPSHOT'
+version = '0.3-SNAPSHOT'
 
 dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+    compile project('datasets-api')
+    compile project('gamemodes-api')
 
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0-RC1'
 }

@@ -1,0 +1,107 @@
+apply plugin: 'java'
+
+version = '0.3-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+
+task jarHiraganaGojuuon(type: Jar) {
+    group = 'jar'
+    baseName = 'Hiragana-Gojuuon-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/hiragana/Gojuuon.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-Gojuuon'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarHiraganaGojuuonDakuten(type: Jar) {
+    group = 'jar'
+    baseName = 'Hiragana-GojuuonDakuten-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/hiragana/GojuuonDakuten.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-GojuuonDakuten'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarHiraganaYouon(type: Jar) {
+    group = 'jar'
+    baseName = 'Hiragana-Youon-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/hiragana/Youon.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-Youon'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarHiraganaYouonDakuten(type: Jar) {
+    group = 'jar'
+    baseName = 'Hiragana-YouonDakuten-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/hiragana/YouonDakuten.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-YouonDakuten'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarKatakanaGojuuon(type: Jar) {
+    group = 'jar'
+    baseName = 'Katakana-Gojuuon-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/katakana/Gojuuon.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-Gojuuon'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarKatakanaGojuuonDakuten(type: Jar) {
+    group = 'jar'
+    baseName = 'Katakana-GojuuonDakuten-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/katakana/GojuuonDakuten.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-GojuuonDakuten'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarKatakanaYouon(type: Jar) {
+    group = 'jar'
+    baseName = 'Katakana-Youon-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/katakana/Youon.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-Youon'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarKatakanaYouonDakuten(type: Jar) {
+    group = 'jar'
+    baseName = 'Katakana-YouonDakuten-DataSet'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/katakana/YouonDakuten.*'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-YouonDakuten'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+jar.dependsOn(jarHiraganaYouon, jarHiraganaYouonDakuten, jarHiraganaGojuuon, jarHiraganaGojuuonDakuten, jarKatakanaYouon, jarKatakanaYouonDakuten, jarKatakanaGojuuon, jarKatakanaGojuuonDakuten)
+
+dependencies {
+    compile project(':Hirakanaji-Task4:datasets-api')
+}

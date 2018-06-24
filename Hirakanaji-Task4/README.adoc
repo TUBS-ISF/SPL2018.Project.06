@@ -1,22 +1,19 @@
 = SPL2018.Project.06 - Hirakanaji-Task4
 
 == Progress
-* [ ] 4 Black-Box-Framework
+* [x] 4 Black-Box-Framework
     ** [x] Copy source files from previous task
             *** [x] Remove Antenna code
     ** [x] Implement features
             *** [x] Implement 2 new features
-            *** [ ] Possibility to switch features on/off
+            *** [x] Possibility to switch features on/off
     ** [x] Modify feature model
             *** [x] Mark implemented features as "konkret"
             *** [x] Mark not implemented features as "abstrakt"
-    ** [ ] Implement FeatureHouse composition tool
     ** [x] Test configurations
     ** [x] Document errors and bugs
 
+== Usage
+Please use the gradle tasks to include the plugins you want. There have to be at least one data set and one game mode plugin.
+
 == Bugs
-* Exception when applying now a different FeatureIDE composition tool
-    ** Plug-in "de.ovgu.featureide.ui" was unable to instantiate
-* Mayor problems with intended feature hierarchy and FeatureHouse
-    ** How do I use code used by multiple features and features used by other features?
-    ** Usage of original() will be displayed in main java file
