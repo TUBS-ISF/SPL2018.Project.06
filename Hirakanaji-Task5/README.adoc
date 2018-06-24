@@ -5,7 +5,7 @@
     ** [x] Copy source files from previous task
             *** [x] Remove Antenna code
     ** [x] Implement features
-            *** [x] Implement 2 new features
+            *** [ ] Implement 2 new features
             *** [ ] Possibility to switch features on/off
     ** [x] Modify feature model
             *** [x] Mark implemented features as "konkret"

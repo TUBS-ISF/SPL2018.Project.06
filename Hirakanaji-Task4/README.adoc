@@ -2,15 +2,14 @@
 
 == Progress
 * [ ] 4 Black-Box-Framework
-    ** [ ] Copy source files from previous task
-            *** [ ] Remove Antenna code
-    ** [ ] Implement features
-            *** [ ] Implement 2 new features
+    ** [x] Copy source files from previous task
+            *** [x] Remove Antenna code
+    ** [x] Implement features
+            *** [x] Implement 2 new features
             *** [ ] Possibility to switch features on/off
-    ** [ ] Modify feature model
-            *** [ ] Mark implemented features as "konkret"
-            *** [ ] Mark not implemented features as "abstrakt"
-    ** [ ] Implement FeatureHouse composition tool
+    ** [x] Modify feature model
+            *** [x] Mark implemented features as "konkret"
+            *** [x] Mark not implemented features as "abstrakt"
     ** [ ] Test configurations
     ** [ ] Document errors and bugs
 
