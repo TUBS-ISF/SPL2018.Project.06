@@ -1,4 +1,4 @@
-package de.tubs.hirakanaji.core;
+package de.tubs.hirakanaji.dataset;
 
 public interface DataSet {
 

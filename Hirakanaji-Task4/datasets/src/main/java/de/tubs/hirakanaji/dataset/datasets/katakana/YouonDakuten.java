@@ -1,8 +1,6 @@
-package de.tubs.hirakanaji.core.datasets.katakana;
+package de.tubs.hirakanaji.dataset.datasets.katakana;
 
-import de.tubs.hirakanaji.core.DataSet;
-
-import javax.xml.crypto.Data;
+import de.tubs.hirakanaji.dataset.DataSet;
 
 /**
  * @author lisa-rosenberg

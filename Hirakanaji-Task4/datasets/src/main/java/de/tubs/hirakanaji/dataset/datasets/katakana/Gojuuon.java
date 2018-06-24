@@ -1,28 +1,28 @@
-package de.tubs.hirakanaji.core.datasets.hiragana;
+package de.tubs.hirakanaji.dataset.datasets.katakana;
 
-import de.tubs.hirakanaji.core.DataSet;
+import de.tubs.hirakanaji.dataset.DataSet;
 
 /**
  * @author lisa-rosenberg
- * @since 13.05.2018
+ * @since 27.05.2018
  */
 public class Gojuuon implements DataSet {
 
-    private static final String[][] hiraganaGojuuon = new String[][] {
+    private static final String[][] katakanaGojuuon = new String[][] {
             // a    i     u     e    o
-            {"あ", "い", "う", "え", "お"}, // None
+            {"ア", "イ", "ウ", "エ", "オ"}, // None
 
-            {"か", "き", "く", "け", "こ"}, // k
-            {"さ", "し", "す", "せ", "そ"}, // s
-            {"た", "ち", "つ", "て", "と"}, // t
-            {"な", "に", "ぬ", "ね", "の"}, // n
-            {"は", "ひ", "ふ", "へ", "ほ"}, // h
-            {"ま", "み", "む", "め", "も"}, // m
-            {"や",       "ゆ",       "よ"}, // y
-            {"ら", "り", "る", "れ", "ろ"}, // r
-            {"わ",                   "を"}, // w
+            {"カ", "キ", "ク", "ケ", "コ"}, // k
+            {"サ", "シ", "ス", "セ", "ソ"}, // s
+            {"タ", "チ", "ツ", "テ", "ト"}, // t
+            {"ナ", "ニ", "ヌ", "ネ", "ノ"}, // n
+            {"ハ", "ヒ", "フ", "ヘ", "ホ"}, // h
+            {"マ", "ミ", "ム", "メ", "モ"}, // m
+            {"ヤ",       "ユ",       "ヨ"}, // y
+            {"ラ", "リ", "ル", "レ", "ロ"}, // r
+            {"ワ",                   "ヲ"}, // w
 
-            {"ん"}, // Special
+            {"ン"}, // Special
     };
 
     private static final String[][] romajiGojuuon = new String[][] {
@@ -43,7 +43,7 @@ public class Gojuuon implements DataSet {
 
     @Override
     public String[][] getSyllabarySet() {
-        return hiraganaGojuuon;
+        return katakanaGojuuon;
     }
 
     @Override

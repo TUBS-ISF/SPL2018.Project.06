@@ -1,23 +1,16 @@
 package de.tubs.hirakanaji.gamemodes;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Scrambler implements GameMode{
+public class Scrambler implements GameMode {
 
-    private Scrambler() {}
-
-    private static Logger logger = LoggerFactory.getLogger(Scrambler.class.getName());
-
-    private static void printSyllables(String[][] dataSet, String[][] romajiDataSet) {
-        logger.info("syllabary | romaji");
+    private void printSyllables(String[][] syllabaryDataSet, String[][] romajiDataSet) {
+        System.out.println("Choose dataset: Syllabary | Romaji");
         String[][] chosenDataSet;
 
         Scanner scanner = new Scanner(System.in);
-        chosenDataSet = scanner.nextLine().equals("romaji") ? romajiDataSet : dataSet;
+        chosenDataSet = scanner.nextLine().equals("Romaji") ? romajiDataSet : syllabaryDataSet;
 
         int minSyllableCount = 2;   // Min. number of syllables per line (e.g. "ba ka")
         int maxSyllableCount = 5;   // Max. number of syllables per line (e.g. "ha hi fu he ho")
@@ -34,7 +27,7 @@ public class Scrambler implements GameMode{
                         [random.nextInt(0, chosenDataSet[syllable].length)]);
             }
 
-            logger.info(line.toString());
+            System.out.println(line.toString());
         }
     }
 
@@ -45,6 +38,6 @@ public class Scrambler implements GameMode{
 
     @Override
     public String getName() {
-        return null;
+        return "Scrambler";
     }
 }

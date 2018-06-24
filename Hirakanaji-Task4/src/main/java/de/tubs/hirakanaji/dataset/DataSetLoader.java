@@ -1,4 +1,4 @@
-package de.tubs.hirakanaji.core;
+package de.tubs.hirakanaji.dataset;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

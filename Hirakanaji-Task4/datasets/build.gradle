@@ -11,7 +11,7 @@ task jarHiraganaGojuuon(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/hiragana/Gojuuon.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Hiragana-Gojuuon'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-Gojuuon'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -23,7 +23,7 @@ task jarHiraganaGojuuonDakuten(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/hiragana/GojuuonDakuten.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Hiragana-GojuuonDakuten'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-GojuuonDakuten'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -35,7 +35,7 @@ task jarHiraganaYouon(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/hiragana/Youon.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Hiragana-Youon'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-Youon'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -47,7 +47,7 @@ task jarHiraganaYouonDakuten(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/hiragana/YouonDakuten.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Hiragana-YouonDakuten'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Hiragana-YouonDakuten'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -59,7 +59,7 @@ task jarKatakanaGojuuon(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/katakana/Gojuuon.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Katakana-Gojuuon'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-Gojuuon'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -71,7 +71,7 @@ task jarKatakanaGojuuonDakuten(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/katakana/GojuuonDakuten.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Katakana-GojuuonDakuten'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-GojuuonDakuten'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -83,7 +83,7 @@ task jarKatakanaYouon(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/katakana/Youon.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Katakana-Youon'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-Youon'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
@@ -95,10 +95,12 @@ task jarKatakanaYouonDakuten(type: Jar) {
 
     from(sourceSets.main.output) {
         include '**/katakana/YouonDakuten.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Katakana-YouonDakuten'
+        include 'META-INF/services/de.tubs.hirakanaji.dataset.DataSet-Katakana-YouonDakuten'
         rename '(.*)DataSet(.*)', '$1DataSet'
     }
 }
+
+jar.dependsOn(jarHiraganaYouon, jarHiraganaYouonDakuten, jarHiraganaGojuuon, jarHiraganaGojuuonDakuten, jarKatakanaYouon, jarKatakanaYouonDakuten, jarKatakanaGojuuon, jarKatakanaGojuuonDakuten)
 
 dependencies {
     compile project(':Hirakanaji-Task4:datasets-api')

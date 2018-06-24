@@ -10,9 +10,9 @@ task jarSyllableTrainer(type: Jar) {
     destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
 
     from(sourceSets.main.output) {
-        include '**/SylllableTrainer.*'
-        include 'META-INF/services/de.tubs.hirakanaji.core.GameMode-SyllableTrainer'
-        rename '(.*)DataSet(.*)', '$1DataSet'
+        include '**/SyllableTrainer.*'
+        include 'META-INF/services/de.tubs.hirakanaji.gamemodes.GameMode-SyllableTrainer'
+        rename '(.*)GameMode(.*)', '$1GameMode'
     }
 }
 
@@ -24,13 +24,10 @@ task jarScrambler(type: Jar) {
     from(sourceSets.main.output) {
         include '**/Scrambler.*'
         include 'META-INF/services/de.tubs.hirakanaji.gamemodes.GameMode-Scrambler'
-        rename '(.*)DataSet(.*)', '$1DataSet'
+        rename '(.*)GameMode(.*)', '$1GameMode'
     }
 }
 
 dependencies {
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
-
     compile project(':Hirakanaji-Task4:gamemodes-api')
 }

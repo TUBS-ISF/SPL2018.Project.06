@@ -1,6 +1,6 @@
-package de.tubs.hirakanaji.core.datasets.katakana;
+package de.tubs.hirakanaji.dataset.datasets.katakana;
 
-import de.tubs.hirakanaji.core.DataSet;
+import de.tubs.hirakanaji.dataset.DataSet;
 
 /**
  * @author lisa-rosenberg

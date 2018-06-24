@@ -1,37 +1,31 @@
 package de.tubs.hirakanaji.gamemodes;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SyllableTrainer implements GameMode {
 
-    private SyllableTrainer() {}
-
-    private static Logger logger = LoggerFactory.getLogger(SyllableTrainer.class.getName());
-
-    private static void askQuestions(String[][] syllabaryDataSet, String[][] romajiDataSet) {
+    private void askQuestions(String[][] syllabaryDataSet, String[][] romajiDataSet) {
         int rounds = 10;
 
         for (int round = 0; round <= rounds; round++) {
             int row = ThreadLocalRandom.current().nextInt(0, syllabaryDataSet.length);
             int col = ThreadLocalRandom.current().nextInt(0, syllabaryDataSet[row].length);
 
-            logger.info("Which romaji syllable is this one?");
-            logger.info(syllabaryDataSet[row][col]);
+            System.out.println("Which romaji syllable is this one?");
+
+            System.out.println(syllabaryDataSet[row][col]);
             String input = getUserInput();
 
             if (input.equals(romajiDataSet[row][col])) {
-                logger.info("Correct!");
+                System.out.println("Correct!");
             } else {
-                logger.info("Wrong! It's {}.", romajiDataSet[row][col]);
+                System.out.println("Wrong! It's " + romajiDataSet[row][col]);
             }
         }
     }
 
-    private static String getUserInput() {
+    private String getUserInput() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
@@ -43,6 +37,6 @@ public class SyllableTrainer implements GameMode {
 
     @Override
     public String getName() {
-        return null;
+        return "Syllable-Trainer";
     }
 }

@@ -1,7 +1,7 @@
 package de.tubs.hirakanaji;
 
-import de.tubs.hirakanaji.core.DataSet;
-import de.tubs.hirakanaji.core.DataSetLoader;
+import de.tubs.hirakanaji.dataset.DataSet;
+import de.tubs.hirakanaji.dataset.DataSetLoader;
 import de.tubs.hirakanaji.gamemodes.GameMode;
 import de.tubs.hirakanaji.gamemodes.GameModeLoader;
 import org.slf4j.Logger;
@@ -47,7 +47,7 @@ public class HirakanajiApplication {
         String gameModeNames = availableGameModes.stream().map(GameMode::getName).reduce((s, s2) -> s + " | " + s2).orElse(null);
         Map<String, GameMode> gameModesMap = availableGameModes.stream().collect(Collectors.toMap(GameMode::getName, gm -> gm));
 
-        logger.info("Choose game mode: {}", gameModeNames);
+        System.out.println("Choose game mode: " + gameModeNames);
 
         Scanner scanner = new Scanner(System.in);
         String gamemode = scanner.nextLine();
