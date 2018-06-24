@@ -1,5 +1,17 @@
 = SPL2018.Project.06 - Hirakanaji-Task4
 
 == Progress
+* [ ] 4 Black-Box-Framework
+    ** [ ] Copy source files from previous task
+            *** [ ] Remove Antenna code
+    ** [ ] Implement features
+            *** [ ] Implement 2 new features
+            *** [ ] Possibility to switch features on/off
+    ** [ ] Modify feature model
+            *** [ ] Mark implemented features as "konkret"
+            *** [ ] Mark not implemented features as "abstrakt"
+    ** [ ] Implement FeatureHouse composition tool
+    ** [ ] Test configurations
+    ** [ ] Document errors and bugs
 
 == Bugs
