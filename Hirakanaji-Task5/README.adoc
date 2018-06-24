@@ -1,12 +1,12 @@
 = SPL2018.Project.06 - Hirakanaji-Task5
 
 == Progress
-* [ ] 5 Feature-orientierte Programmierung
+* [x] 5 Feature-orientierte Programmierung
     ** [x] Copy source files from previous task
             *** [x] Remove Antenna code
     ** [x] Implement features
-            *** [ ] Implement 2 new features
-            *** [ ] Possibility to switch features on/off
+            *** [x] Implement 2 new features
+            *** [x] Possibility to switch features on/off
     ** [x] Modify feature model
             *** [x] Mark implemented features as "konkret"
             *** [x] Mark not implemented features as "abstrakt"
@@ -20,3 +20,5 @@
 * Mayor problems with intended feature hierarchy and FeatureHouse
     ** How do I use code used by multiple features and features used by other features?
     ** Usage of original() will be displayed in main java file
+    ** Why does FeatureHouse delete my files every time? :(
+    ** No FeatureHouse for me, sorry.
