@@ -1,0 +1,36 @@
+apply plugin: 'java'
+
+version = '0.3-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+
+task jarSyllableTrainer(type: Jar) {
+    group = 'jar'
+    baseName = 'SyllableTrainer-GameMode'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/hiragana/Gojuuon.*'
+        include 'META-INF/services/de.tubs.hirakanaji.core.DataSet-Hiragana-Gojuuon'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+task jarScrambler(type: Jar) {
+    group = 'jar'
+    baseName = 'Scrambler-GameMode'
+    destinationDir = file("$rootDir/Hirakanaji-Task4/plugins")
+
+    from(sourceSets.main.output) {
+        include '**/hiragana/GojuuonDakuten.*'
+        include 'META-INF/services/de.tubs.hirakanaji.gamemodes.GameMode-Scrambler'
+        rename '(.*)DataSet(.*)', '$1DataSet'
+    }
+}
+
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+
+    compile project(':Hirakanaji-Task4:gamemodes-api')
+}

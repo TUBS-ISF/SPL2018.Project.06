@@ -2,4 +2,8 @@ include 'Hirakanaji-Task1',
         'Hirakanaji-Task2',
         'Hirakanaji-Task3',
         'Hirakanaji-Task4',
+        'Hirakanaji-Task4:datasets',
+        'Hirakanaji-Task4:datasets-api',
+        'Hirakanaji-Task4:gamemodes',
+        'Hirakanaji-Task4:gamemodes-api',
         'Hirakanaji-Task5'
