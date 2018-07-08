@@ -1,0 +1,5 @@
+= SPL2018.Project.06 - Hirakanaji-Task6
+
+== Progress
+
+== Bugs
