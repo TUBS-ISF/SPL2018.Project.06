@@ -2,4 +2,17 @@
 
 == Progress
 
+* [x] 6 Aspekt-orientierte Programmierung
+    ** [x] Copy source files from previous task
+            *** [x] Remove FeatureHouse Code
+    ** [ ] Implement features
+            *** [x] Implement 2 new features
+            *** [ ] Possibility to switch features on/off
+    ** [ ] Modify feature model
+            *** [ ] Mark implemented features as "konkret"
+            *** [ ] Mark not implemented features as "abstrakt"
+    ** [ ] Implement AspectJ
+    ** [ ] Test configurations
+    ** [ ] Document errors and bugs
+
 == Bugs

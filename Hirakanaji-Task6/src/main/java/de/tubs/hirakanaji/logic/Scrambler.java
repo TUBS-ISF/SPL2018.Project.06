@@ -13,21 +13,25 @@ import static de.tubs.hirakanaji.core.RomajiDataSet.romajiYouonDakuten;
 
 public class Scrambler {
 
+    private Scrambler() {
+
+    }
+
     private static int lineCount = 20; // Amount of generated lines
 
     public static void startScrambler() {
         String[][] dataSet;
 
         System.out.println("Choose amount of lines to print.");
-        String input = getUserInput();
-        if (input.matches("[\\d]*")) {
-           lineCount = Integer.parseInt(input);
+        String inputLines = getUserInput();
+        if (inputLines.matches("[\\d]*")) {
+           lineCount = Integer.parseInt(inputLines);
         }
 
         System.out.println("Choose syllabary: Hiragana | Katakana | Romaji");
-        input = getUserInput();
+        String inputSyllabary = getUserInput();
 
-        switch (input) {
+        switch (inputSyllabary) {
             case "Hiragana":
                 // Hiragana
                 dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
@@ -48,21 +52,31 @@ public class Scrambler {
 
     private static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
                                          String[][] youon, String[][] youonDakuten) {
+
+        System.out.println("Choose one or more sets (separator = ','): Gojuuon | Gojuuon with Dakuten | Youon | Youon with Dakuten");
+        String inputSet = getUserInput();
+        String[] inputSets = inputSet.split(",");
+
         String[][] dataSet;
         dataSet = Stream.of(chars)
                 .flatMap(Stream::of).toArray(String[][]::new);
 
-        dataSet = Stream.of(dataSet, gojuuon)
-                .flatMap(Stream::of).toArray(String[][]::new);
+        for (String s : inputSets) {
+            if (s.equals("Gojuuon")) {
+                dataSet = Stream.of(dataSet, gojuuon)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            } else if (s.equals("Gojuuon with Dakuten")) {
+                dataSet = Stream.of(dataSet, gojuuonDakuten)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            }  else if (s.equals("Youon")) {
+                dataSet = Stream.of(dataSet, youon)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            }  else if (s.equals("Youon with Dakuten")) {
+                dataSet = Stream.of(dataSet, youonDakuten)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            }
+        }
 
-        dataSet = Stream.of(dataSet, gojuuonDakuten)
-                .flatMap(Stream::of).toArray(String[][]::new);
-
-        dataSet = Stream.of(dataSet, youon)
-                .flatMap(Stream::of).toArray(String[][]::new);
-
-        dataSet = Stream.of(dataSet, youonDakuten)
-                .flatMap(Stream::of).toArray(String[][]::new);
         return dataSet;
     }
 

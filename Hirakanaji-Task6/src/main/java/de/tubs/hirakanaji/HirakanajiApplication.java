@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static de.tubs.hirakanaji.logic.Scrambler.startScrambler;
+import static de.tubs.hirakanaji.logic.ShowSyllables.startShowSyllables;
 import static de.tubs.hirakanaji.logic.SyllableTrainer.startSyllableTrainer;
 
 /**
@@ -22,15 +23,18 @@ public class HirakanajiApplication {
     public static void main(String[] args) {
         properties = Arrays.asList(args);
 
-        System.out.println("Choose game mode: SyllableTrainer | Scrambler");
+        System.out.println("Choose game mode: SyllableTrainer | Scrambler | ShowSyllables");
         String input = getUserInput();
 
         if ("SyllableTrainer".equals(input)) {
             /* Learn Syllables */
             startSyllableTrainer();
-
-        } else {/* Scrambler */
+        } else if ("Scrambler".equals(input)) {
+            /* Scrambler */
             startScrambler();
+        } else {
+            /* ShowSyllables */
+            startShowSyllables();
         }
     }
 
@@ -38,4 +42,5 @@ public class HirakanajiApplication {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
+
 }
