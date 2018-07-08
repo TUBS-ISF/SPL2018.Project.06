@@ -14,6 +14,6 @@
     ** [x] Document errors and bugs
 
 == Usage
-Please use the gradle tasks to include the plugins you want. There have to be at least one data set and one game mode plugin.
+Please use the gradle tasks to include the plugins you want. There has to be at least one data set and one game mode plugin included in order to get the application working.
 
 == Bugs
