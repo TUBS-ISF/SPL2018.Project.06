@@ -11,7 +11,13 @@ import static de.tubs.hirakanaji.core.KatakanaDataSet.katakanaYouonDakuten;
 import static de.tubs.hirakanaji.core.RomajiDataSet.*;
 import static de.tubs.hirakanaji.logic.Scrambler.startScrambler;
 
-public class SyllableTrainer {
+public aspect SyllableTrainer {
+
+    declare precedence: HirakanajiApplication, SyllableTrainer;
+
+    after(): execution(void HirakanajiApplication.main()) {
+        startSyllableTrainer();
+    }
 
     private SyllableTrainer() {
 
@@ -28,7 +34,8 @@ public class SyllableTrainer {
             dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
             askQuestions(dataSet);
 
-        } else {/* Katakana */
+        } else {
+            /* Katakana */
             dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
             askQuestions(dataSet);
         }

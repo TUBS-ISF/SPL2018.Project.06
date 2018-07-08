@@ -11,7 +11,13 @@ import static de.tubs.hirakanaji.core.KatakanaDataSet.katakanaYouonDakuten;
 import static de.tubs.hirakanaji.core.RomajiDataSet.*;
 import static de.tubs.hirakanaji.core.RomajiDataSet.romajiYouonDakuten;
 
-public class Scrambler {
+public aspect Scrambler {
+
+    declare precedence: HirakanajiApplication, Scrambler;
+
+    after(): execution(void HirakanajiApplication.main()) {
+        startScrambler();
+    }
 
     private Scrambler() {
 

@@ -8,7 +8,13 @@ import java.util.stream.Stream;
 import static de.tubs.hirakanaji.core.HiraganaDataSet.*;
 import static de.tubs.hirakanaji.core.KatakanaDataSet.*;
 import static de.tubs.hirakanaji.core.RomajiDataSet.*;
-public class ShowSyllables {
+public aspect ShowSyllables {
+
+    declare precedence: HirakanajiApplication, ShowSyllables;
+
+    after(): execution(void HirakanajiApplication.main()) {
+        startShowSyllables();
+    }
 
     private ShowSyllables() {
 
