@@ -1,8 +1,6 @@
 package de.tubs.hirakanaji.logic;
 
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
 import static de.tubs.hirakanaji.core.HiraganaDataSet.*;
