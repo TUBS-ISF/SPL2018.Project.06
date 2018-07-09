@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import static de.tubs.hirakanaji.core.HiraganaDataSet.*;
 import static de.tubs.hirakanaji.core.KatakanaDataSet.*;
 import static de.tubs.hirakanaji.core.RomajiDataSet.*;
+
 public aspect ShowSyllables {
 
     declare precedence: HirakanajiApplication, ShowSyllables;
