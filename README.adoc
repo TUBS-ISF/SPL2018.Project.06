@@ -21,7 +21,7 @@ The goal of this student project is to implement different techniques of softwar
     ** [x] 2018/05/27 - 3 Präprozessoren
     ** [x] 2018/06/10 - 4 Black-Box-Framework
     ** [x] 2018/06/24 - 5 Feature-orientierte Programmierung
-    ** [ ] 2018/07/08 - 6 Aspektorientierte Programmierung
+    ** [x] 2018/07/08 - 6 Aspektorientierte Programmierung
 
 * Task README.adoc files
     ** link:Hirakanaji-Task1/README.adoc[README.adoc - Hirakanaji-Task1]

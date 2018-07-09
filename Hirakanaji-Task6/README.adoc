@@ -5,14 +5,24 @@
 * [x] 6 Aspekt-orientierte Programmierung
     ** [x] Copy source files from previous task
             *** [x] Remove FeatureHouse Code
-    ** [ ] Implement features
+    ** [x] Implement features
             *** [x] Implement 2 new features
-            *** [ ] Possibility to switch features on/off
-    ** [ ] Modify feature model
-            *** [ ] Mark implemented features as "konkret"
-            *** [ ] Mark not implemented features as "abstrakt"
-    ** [ ] Implement AspectJ
-    ** [ ] Test configurations
-    ** [ ] Document errors and bugs
+            *** [x] Possibility to switch features on/off
+    ** [x] Modify feature model
+            *** [x] Mark implemented features as "konkret"
+            *** [x] Mark not implemented features as "abstrakt"
+    ** [x] Implement AspectJ
+    ** [x] Test configurations
+    ** [x] Document errors and bugs
 
 == Bugs
+* AspectJ zerschießt mir genau wie FeatureHouse (beziehungsweise wird es eher FeatureIDE sein ...) jedes Mal, wenn ich eclipse in den Vordergrund bringe, meine komplette Source-Dateien, da sie vermutlich an falscher Stelle liegen. Nur ein Git-Revert hilft. Das macht es unmöglich, AspectJ in eclipse wirklich zu testen.
+* Deswegen habe ich IntelliJ zum Schreiben verwendet, in der so etwas nicht auftritt.
+* Dementsprechend habe ich auch nicht die Konfigurationen getestet.
+* Es werden von eclipse/FeatureIDE auch jedes Mal mehrere .gitignore-Dateien in allen Ordner-Tiefen erstellt - warum?
+
+== AspectJ
+* Role: Variability management
+* Bigger Product lines and AspectJ: Correctly combine aspects and features that depends to each other
+* Best programming technique so far when working with product lines: Service loader (task4) (Blackbox-Framework). It's the only technique that really works in a real project and is easily compatible with every IDE.
+
