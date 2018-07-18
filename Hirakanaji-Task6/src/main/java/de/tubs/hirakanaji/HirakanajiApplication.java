@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static de.tubs.hirakanaji.logic.Scrambler.startScrambler;
-import static de.tubs.hirakanaji.logic.ShowSyllables.startShowSyllables;
-import static de.tubs.hirakanaji.logic.SyllableTrainer.startSyllableTrainer;
+import static de.tubs.hirakanaji.gamemode.Scrambler.startScrambler;
+import static de.tubs.hirakanaji.gamemode.ShowSyllables.startShowSyllables;
+import static de.tubs.hirakanaji.gamemode.SyllableTrainer.startSyllableTrainer;
 
 /**
  * @author lisa-rosenberg

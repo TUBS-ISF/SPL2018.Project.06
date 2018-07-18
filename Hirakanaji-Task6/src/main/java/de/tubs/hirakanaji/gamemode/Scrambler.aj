@@ -1,15 +1,15 @@
-package de.tubs.hirakanaji.logic;
+package de.tubs.hirakanaji.gamemode;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
-import static de.tubs.hirakanaji.core.HiraganaDataSet.*;
-import static de.tubs.hirakanaji.core.HiraganaDataSet.hiraganaYouonDakuten;
-import static de.tubs.hirakanaji.core.KatakanaDataSet.*;
-import static de.tubs.hirakanaji.core.KatakanaDataSet.katakanaYouonDakuten;
-import static de.tubs.hirakanaji.core.RomajiDataSet.*;
-import static de.tubs.hirakanaji.core.RomajiDataSet.romajiYouonDakuten;
+import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.*;
+import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.hiraganaYouonDakuten;
+import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
+import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.katakanaYouonDakuten;
+import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
+import static de.tubs.hirakanaji.syllabary.RomajiDataSet.romajiYouonDakuten;
 
 public aspect Scrambler {
 

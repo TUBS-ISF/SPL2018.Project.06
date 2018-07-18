@@ -1,11 +1,11 @@
-package de.tubs.hirakanaji.logic;
+package de.tubs.hirakanaji.gamemode;
 
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import static de.tubs.hirakanaji.core.HiraganaDataSet.*;
-import static de.tubs.hirakanaji.core.KatakanaDataSet.*;
-import static de.tubs.hirakanaji.core.RomajiDataSet.*;
+import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.*;
+import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
+import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
 
 public aspect ShowSyllables {
 
