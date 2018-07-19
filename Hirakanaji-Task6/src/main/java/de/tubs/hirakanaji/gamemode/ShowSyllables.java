@@ -7,13 +7,13 @@ import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.*;
 import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
 import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
 
-public aspect ShowSyllables {
+public class ShowSyllables {
 
-    declare precedence: HirakanajiApplication, ShowSyllables;
-
-    after(): execution(void HirakanajiApplication.main()) {
-        startShowSyllables();
-    }
+//    declare precedence: HirakanajiApplication, ShowSyllables;
+//
+//    after(): execution(void HirakanajiApplication.main()) {
+//        startShowSyllables();
+//    }
 
     private ShowSyllables() {
 
@@ -25,11 +25,11 @@ public aspect ShowSyllables {
         System.out.println("Choose syllabary: Hiragana | Katakana | Romaji");
         String input = getUserInput();
 
-        if ("Hiragana".equals(input)) {
+        if ("Hiragana".equalsIgnoreCase(input)) {
             /* Hiragana */
             dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
             printSyllables(dataSet);
-        } else if ("Katakana".equals(input)) {
+        } else if ("Katakana".equalsIgnoreCase(input)) {
             /* Katakana */
             dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
             printSyllables(dataSet);
@@ -52,16 +52,16 @@ public aspect ShowSyllables {
                 .flatMap(Stream::of).toArray(String[][]::new);
 
         for (String s : inputSets) {
-            if (s.equals("Gojuuon")) {
+            if (s.equalsIgnoreCase("Gojuuon")) {
                 dataSet = Stream.of(dataSet, gojuuon)
                         .flatMap(Stream::of).toArray(String[][]::new);
-            } else if (s.equals("Gojuuon with Dakuten")) {
+            } else if (s.equalsIgnoreCase("Gojuuon with Dakuten")) {
                 dataSet = Stream.of(dataSet, gojuuonDakuten)
                         .flatMap(Stream::of).toArray(String[][]::new);
-            }  else if (s.equals("Youon")) {
+            }  else if (s.equalsIgnoreCase("Youon")) {
                 dataSet = Stream.of(dataSet, youon)
                         .flatMap(Stream::of).toArray(String[][]::new);
-            }  else if (s.equals("Youon with Dakuten")) {
+            }  else if (s.equalsIgnoreCase("Youon with Dakuten")) {
                 dataSet = Stream.of(dataSet, youonDakuten)
                         .flatMap(Stream::of).toArray(String[][]::new);
             }

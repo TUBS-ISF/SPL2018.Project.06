@@ -27,13 +27,13 @@ public class HirakanajiApplication {
         System.out.println("Choose game mode: SyllableTrainer | Scrambler | ShowSyllables | VocabularyTrainer");
         String input = getUserInput();
 
-        if ("SyllableTrainer".equals(input)) {
+        if ("SyllableTrainer".equalsIgnoreCase(input)) {
             /* Learn Syllables */
             startSyllableTrainer();
-        } else if ("Scrambler".equals(input)) {
+        } else if ("Scrambler".equalsIgnoreCase(input)) {
             /* Scrambler */
             startScrambler();
-        } else if ("ShowSyllables".equals(input)){
+        } else if ("ShowSyllables".equalsIgnoreCase(input)){
             /* Show Syllables */
             startShowSyllables();
         } else {

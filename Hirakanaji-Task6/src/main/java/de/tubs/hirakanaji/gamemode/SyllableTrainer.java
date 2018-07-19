@@ -10,13 +10,13 @@ import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
 import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.katakanaYouonDakuten;
 import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
 
-public aspect SyllableTrainer {
+public class SyllableTrainer {
 
-    declare precedence: HirakanajiApplication, SyllableTrainer;
-
-    after(): execution(void HirakanajiApplication.main()) {
-        startSyllableTrainer();
-    }
+//    declare precedence: HirakanajiApplication, SyllableTrainer;
+//
+//    after(): execution(void HirakanajiApplication.main()) {
+//        startSyllableTrainer();
+//    }
 
     private SyllableTrainer() {
 
@@ -28,7 +28,7 @@ public aspect SyllableTrainer {
         System.out.println("Choose syllabary: Hiragana | Katakana");
         String input = getUserInput();
 
-        if ("Hiragana".equals(input)) {
+        if ("Hiragana".equalsIgnoreCase(input)) {
             /* Hiragana */
             dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
             askQuestions(dataSet);
@@ -52,16 +52,16 @@ public aspect SyllableTrainer {
                 .flatMap(Stream::of).toArray(String[][]::new);
 
         for (String s : inputSets) {
-            if (s.equals("Gojuuon")) {
+            if (s.equalsIgnoreCase("Gojuuon")) {
                 dataSet = Stream.of(dataSet, gojuuon)
                         .flatMap(Stream::of).toArray(String[][]::new);
-            } else if (s.equals("Gojuuon with Dakuten")) {
+            } else if (s.equalsIgnoreCase("Gojuuon with Dakuten")) {
                 dataSet = Stream.of(dataSet, gojuuonDakuten)
                         .flatMap(Stream::of).toArray(String[][]::new);
-            }  else if (s.equals("Youon")) {
+            }  else if (s.equalsIgnoreCase("Youon")) {
                 dataSet = Stream.of(dataSet, youon)
                         .flatMap(Stream::of).toArray(String[][]::new);
-            }  else if (s.equals("Youon with Dakuten")) {
+            }  else if (s.equalsIgnoreCase("Youon with Dakuten")) {
                 dataSet = Stream.of(dataSet, youonDakuten)
                         .flatMap(Stream::of).toArray(String[][]::new);
             }
@@ -101,7 +101,7 @@ public aspect SyllableTrainer {
 
         for (int row = 0; row < romajiDataSet.length; row++) {
             for (int col = 0; col < romajiDataSet[row].length; col++) {
-                if (romajiDataSet[row][col].equals(input)) {
+                if (romajiDataSet[row][col].equalsIgnoreCase(input)) {
                     return new int[]{row, col};
                 }
             }

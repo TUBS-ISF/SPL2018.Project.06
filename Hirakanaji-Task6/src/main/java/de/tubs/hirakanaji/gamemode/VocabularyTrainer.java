@@ -7,15 +7,15 @@ import java.util.stream.Stream;
 import static de.tubs.hirakanaji.vocabulary.Unit1.unit1Vocabulary;
 import static de.tubs.hirakanaji.vocabulary.Unit2.unit2Vocabulary;
 
-public aspect VocabularyTrainer {
+public class VocabularyTrainer {
 
     static int rounds;
 
-    declare precedence: HirakanajiApplication, VocabularyTrainer;
-
-    after(): execution(void HirakanajiApplication.main()) {
-        startVocabularyTrainer();
-    }
+//    declare precedence: HirakanajiApplication, VocabularyTrainer;
+//
+//    after(): execution(void HirakanajiApplication.main()) {
+//        startVocabularyTrainer();
+//    }
 
     private VocabularyTrainer() {
 
@@ -30,7 +30,7 @@ public aspect VocabularyTrainer {
         System.out.println("Choose unit: Unit 1 | Unit 2");
         String input = getUserInput();
 
-        if ("Unit 1".equals(input)) {
+        if ("Unit 1".equalsIgnoreCase(input)) {
             /* Unit 1 */
             dataSet = getDataSet(unit1Vocabulary);
             askQuestions(dataSet);
@@ -72,7 +72,7 @@ public aspect VocabularyTrainer {
             System.out.println(dataSet[row][col]);
             String input = getUserInput();
 
-            if (dataSet[row][solutionCol].equals(input)) {
+            if (dataSet[row][solutionCol].equalsIgnoreCase(input)) {
                 System.out.println("Correct!");
             }  else {
                 System.out.println("Wrong! It's " + dataSet[row][solutionCol]);
