@@ -7,6 +7,7 @@ import java.util.Scanner;
 import static de.tubs.hirakanaji.gamemode.Scrambler.startScrambler;
 import static de.tubs.hirakanaji.gamemode.ShowSyllables.startShowSyllables;
 import static de.tubs.hirakanaji.gamemode.SyllableTrainer.startSyllableTrainer;
+import static de.tubs.hirakanaji.gamemode.VocabularyTrainer.startVocabularyTrainer;
 
 /**
  * @author lisa-rosenberg
@@ -23,7 +24,7 @@ public class HirakanajiApplication {
     public static void main(String[] args) {
         properties = Arrays.asList(args);
 
-        System.out.println("Choose game mode: SyllableTrainer | Scrambler | ShowSyllables");
+        System.out.println("Choose game mode: SyllableTrainer | Scrambler | ShowSyllables | VocabularyTrainer");
         String input = getUserInput();
 
         if ("SyllableTrainer".equals(input)) {
@@ -32,9 +33,12 @@ public class HirakanajiApplication {
         } else if ("Scrambler".equals(input)) {
             /* Scrambler */
             startScrambler();
-        } else {
-            /* ShowSyllables */
+        } else if ("ShowSyllables".equals(input)){
+            /* Show Syllables */
             startShowSyllables();
+        } else {
+            /* Vocabulary Trainer */
+            startVocabularyTrainer();
         }
     }
 

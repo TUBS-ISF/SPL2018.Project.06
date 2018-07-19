@@ -2,37 +2,32 @@ package de.tubs.hirakanaji.vocabulary;
 
 public class Unit1 {
 
-    public static final String[][] vocabulary = new String[0][0];
-
     public static final String[][] unit1Vocabulary = new String[][] {
-            {"Hajimemashite!",      "Schön, Sie kennenzulernen!",   "はじめまして"},
-            {"desu",                "sein",                         "です"},
-            {"hai",                 "ja",                           "はい"},
-            {"sō desu",             "Das stimmt",                   "そう です"},
-            {"Konnichi wa!",        "Guten Tag!",                   "こんにち わ"},
-            {"Dōzo yoroshiku!",     "Schön, Sie kennenzulernen!",   "どうぞ よろしく"},
-            {"kore",                "das",                          "これ"},
-            {"nimotsu",             "Gepäck",                       "にもつ"},
-            {"iie",                 "nein",                         "いいえ"},
-            {"watashi",             "ich",                          "わたし"},
-            {"dewa arimasen",       "nicht sein",                   "でわ ありません"},
-            {"sore",                "das",                          "それ"},
-            {"kaban",               "Tasche",                       "かばん"},
-            {"boku",                "ich",                          "ぼく"},
-            {"are",                 "das",                          "あれ"},
-            {"gakkō",               "Schule",                       "がっこう"},
-            {"sakura",              "Kirschbaum",                   "さくら"},
-            {"hana",                "Blume",                        "はな"},
-            {"momo",                "Pfirsichbaum",                 "もも"},
-            {"nan",                 "was",                          "なん"},
-            {"depāto",              "Kaufhaus",                     "でぱあと"},
-            {"eki",                 "Bahnhof",                      "えき"},
-            {"ee",                  "ja",                           "ええ"},
-            {"Arigatō!",            "Danke",                        "ありがとう"},
-            {"Dō itashimashite!",   "Gern geschehen!",              "どう いたしまして"},
-            {"Jā...",               "Also...",                      "じゃあ"},
-            {"Jā mata!",            "Also bis dann!",               "じゃあ また"},
-            {"Sayōnara!",           "Auf Wiedersehen!",             "さようなら"}
+            {"Hajimemashite!",      "Nice to meet you!",    "はじめまして!"},
+            {"desu",                "to be",                "です"},
+            {"hai",                 "yes",                  "はい"},
+            {"sō desu",             "That's right",         "そう です"},
+            {"Konnichi wa!",        "Hello!",               "こんにち わ"},
+            {"kore",                "this",                 "これ"},
+            {"nimotsu",             "luggage",              "にもつ"},
+            {"iie",                 "no",                   "いいえ"},
+            {"watashi",             "I",                    "わたし"},
+            {"dewa arimasen",       "not",                  "でわ ありません"},
+            {"sore",                "it",                   "それ"},
+            {"kaban",               "bag",                  "かばん"},
+            {"are",                 "that",                 "あれ"},
+            {"gakkō",               "school",               "がっこう"},
+            {"sakura",              "cherry tree",          "さくら"},
+            {"hana",                "flower",               "はな"},
+            {"momo",                "peach tree",           "もも"},
+            {"nan",                 "what",                 "なん"},
+            {"depāto",              "shopping center",      "でぱあと"},
+            {"eki",                 "railway station",      "えき"},
+            {"Arigatō!",            "Thank you!",           "ありがとう!"},
+            {"Dō itashimashite!",   "You're welcome!",      "どう いたしまして!"},
+            {"Jā",                  "Well then",            "じゃあ"},
+            {"Jā mata!",            "See you!",             "じゃあ また"},
+            {"Sayōnara!",           "Goodbye!",             "さようなら!"}
     };
 
 }
