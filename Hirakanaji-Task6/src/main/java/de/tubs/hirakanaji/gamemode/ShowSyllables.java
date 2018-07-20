@@ -76,9 +76,9 @@ public class ShowSyllables {
     }
 
     private static void printSyllables(String[][] dataSet) {
-        for (int row = 0; row < dataSet.length; row++) {
-            for (int col = 0; col < dataSet[row].length; col++) {
-                System.out.print(dataSet[row][col]);
+        for (String[] aDataSet : dataSet) {
+            for (String anADataSet : aDataSet) {
+                System.out.print(anADataSet);
             }
             System.out.println();
         }

@@ -7,21 +7,21 @@ import java.util.stream.Stream;
 import static de.tubs.hirakanaji.vocabulary.Unit1.unit1Vocabulary;
 import static de.tubs.hirakanaji.vocabulary.Unit2.unit2Vocabulary;
 
-public class VocabularyTrainer {
+public class PracticeVocabulary {
 
-    static int rounds;
+    private static int rounds;
 
-//    declare precedence: HirakanajiApplication, VocabularyTrainer;
+//    declare precedence: HirakanajiApplication, PracticeVocabulary;
 //
 //    after(): execution(void HirakanajiApplication.main()) {
-//        startVocabularyTrainer();
+//        startPracticeVocabulary();
 //    }
 
-    private VocabularyTrainer() {
+    private PracticeVocabulary() {
 
     }
 
-    public static void startVocabularyTrainer() {
+    public static void startPracticeVocabulary() {
         String[][] dataSet;
 
         System.out.println("How many rounds?");
@@ -33,12 +33,12 @@ public class VocabularyTrainer {
         if ("Unit 1".equalsIgnoreCase(input)) {
             /* Unit 1 */
             dataSet = getDataSet(unit1Vocabulary);
-            askQuestions(dataSet);
+            startGame(dataSet);
 
         } else {
             /* Unit 2 */
             dataSet = getDataSet(unit2Vocabulary);
-            askQuestions(dataSet);
+            startGame(dataSet);
         }
     }
 
@@ -51,22 +51,20 @@ public class VocabularyTrainer {
         return scanner.nextLine();
     }
 
-    private static void askQuestions(String[][] dataSet) {
-
+    private static void startGame(String[][] dataSet) {
         for (int round = 0; round <= rounds; round++) {
             int row = ThreadLocalRandom.current().nextInt(0, dataSet.length);
             int col = ThreadLocalRandom.current().nextInt(0, dataSet[row].length);
             int solutionCol;
 
-            switch (col) {
-                case 1:
-                    System.out.println("Translate the following word into Rōmaji");
-                    solutionCol = 0;
-                    break;
-                default:
-                    System.out.println("Translate the following word into English");
-                    solutionCol = 1;
-                    break;
+            if (col == 1) {
+                System.out.println("Translate the following word into Rōmaji");
+                solutionCol = 0;
+
+            } else {
+                System.out.println("Translate the following word into English");
+                solutionCol = 1;
+
             }
 
             System.out.println(dataSet[row][col]);

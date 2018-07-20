@@ -106,6 +106,7 @@ public class SyllableTrainer {
                 }
             }
         }
+
         return new int[]{};
     }
 

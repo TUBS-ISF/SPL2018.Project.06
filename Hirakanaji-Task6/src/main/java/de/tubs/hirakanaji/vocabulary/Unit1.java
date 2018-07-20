@@ -6,7 +6,7 @@ public class Unit1 {
             {"Hajimemashite!",      "Nice to meet you!",    "はじめまして!"},
             {"desu",                "to be",                "です"},
             {"hai",                 "yes",                  "はい"},
-            {"sō desu",             "That's right",         "そう です"},
+            {"sō desu",             "that's right",         "そう です"},
             {"Konnichi wa!",        "Hello!",               "こんにち わ"},
             {"kore",                "this",                 "これ"},
             {"nimotsu",             "luggage",              "にもつ"},

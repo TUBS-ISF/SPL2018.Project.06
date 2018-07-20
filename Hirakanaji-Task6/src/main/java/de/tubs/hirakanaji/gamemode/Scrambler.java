@@ -58,7 +58,6 @@ public class Scrambler {
 
     private static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
                                          String[][] youon, String[][] youonDakuten) {
-
         System.out.println("Choose one or more sets (separator = ','): Gojuuon | Gojuuon with Dakuten | Youon | Youon with Dakuten");
         String inputSet = getUserInput();
         String[] inputSets = inputSet.split(",");
