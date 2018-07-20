@@ -1,7 +1,5 @@
 package de.tubs.hirakanaji.gamemode;
 
-import java.io.Console;
-import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
