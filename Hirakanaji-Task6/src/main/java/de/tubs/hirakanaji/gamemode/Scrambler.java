@@ -25,7 +25,7 @@ public class Scrambler {
 
     private static int lineCount = 20; // Amount of generated lines
 
-    public static void startScrambler() {
+    public static String startScrambler() {
         String[][] dataSet;
 
         System.out.println("Choose amount of lines to print.");
@@ -41,18 +41,15 @@ public class Scrambler {
             case "Hiragana":
                 // Hiragana
                 dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-                printSyllables(dataSet);
-                break;
+                return printSyllables(dataSet);
             case "Katakana":
                 // Katakana
                 dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
-                printSyllables(dataSet);
-                break;
+                return printSyllables(dataSet);
             default:
                 // Romaji
                 dataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
-                printSyllables(dataSet);
-                break;
+                return printSyllables(dataSet);
         }
     }
 
@@ -85,11 +82,13 @@ public class Scrambler {
         return dataSet;
     }
 
-    private static void printSyllables(String[][] dataSet) {
+    private static String printSyllables(String[][] dataSet) {
         int minSyllableCount = 2;   // Min. number of syllables per line (e.g. "ba ka")
         int maxSyllableCount = 5;   // Max. number of syllables per line (e.g. "ha hi fu he ho")
 
         int syllable;               // Variable syllable of dataSet
+
+        StringBuilder results = new StringBuilder();
 
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
@@ -100,7 +99,10 @@ public class Scrambler {
                         [random.nextInt(0, dataSet[syllable].length)]);
             }
             System.out.println(line.toString());
+            results.append(line.toString() + "\\n");
         }
+
+        return results.toString();
     }
 
     private static String getUserInput() {

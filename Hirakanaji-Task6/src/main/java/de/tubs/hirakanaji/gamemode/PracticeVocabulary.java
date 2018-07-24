@@ -21,7 +21,7 @@ public class PracticeVocabulary {
 
     }
 
-    public static void startPracticeVocabulary() {
+    public static String startPracticeVocabulary() {
         String[][] dataSet;
 
         System.out.println("How many rounds?");
@@ -33,12 +33,12 @@ public class PracticeVocabulary {
         if ("Unit 1".equalsIgnoreCase(input)) {
             /* Unit 1 */
             dataSet = getDataSet(unit1Vocabulary);
-            startGame(dataSet);
+            return startGame(dataSet);
 
         } else {
             /* Unit 2 */
             dataSet = getDataSet(unit2Vocabulary);
-            startGame(dataSet);
+            return startGame(dataSet);
         }
     }
 
@@ -51,30 +51,39 @@ public class PracticeVocabulary {
         return scanner.nextLine();
     }
 
-    private static void startGame(String[][] dataSet) {
+    private static String startGame(String[][] dataSet) {
+        StringBuilder results = new StringBuilder();
+
         for (int round = 0; round <= rounds; round++) {
             int row = ThreadLocalRandom.current().nextInt(0, dataSet.length);
             int col = ThreadLocalRandom.current().nextInt(0, dataSet[row].length);
             int solutionCol;
 
+
             if (col == 1) {
                 System.out.println("Translate the following word into Rōmaji");
+                results.append("Translate the following word into Rōmaji \\n");
                 solutionCol = 0;
 
             } else {
                 System.out.println("Translate the following word into English");
+                results.append("Translate the following word into English \\n");
                 solutionCol = 1;
-
             }
 
             System.out.println(dataSet[row][col]);
+            results.append(dataSet[row][col] + "\\n");
             String input = getUserInput();
 
             if (dataSet[row][solutionCol].equalsIgnoreCase(input)) {
                 System.out.println("Correct!");
+                results.append("Correct! \\n");
             }  else {
                 System.out.println("Wrong! It's " + dataSet[row][solutionCol]);
+                results.append("Wrong! It's " + dataSet[row][solutionCol] + "\\n");
             }
         }
+
+        return results.toString();
     }
 }

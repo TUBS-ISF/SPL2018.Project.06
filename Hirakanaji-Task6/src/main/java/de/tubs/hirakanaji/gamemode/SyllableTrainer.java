@@ -22,7 +22,7 @@ public class SyllableTrainer {
 
     }
 
-    public static void startSyllableTrainer() {
+    public static String startSyllableTrainer() {
         String[][] dataSet;
 
         System.out.println("Choose syllabary: Hiragana | Katakana");
@@ -31,12 +31,12 @@ public class SyllableTrainer {
         if ("Hiragana".equalsIgnoreCase(input)) {
             /* Hiragana */
             dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-            askQuestions(dataSet);
+            return askQuestions(dataSet);
 
         } else {
             /* Katakana */
             dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
-            askQuestions(dataSet);
+            return askQuestions(dataSet);
         }
 
     }
@@ -70,7 +70,9 @@ public class SyllableTrainer {
         return dataSet;
     }
 
-    private static void askQuestions(String[][] dataSet) {
+    private static String askQuestions(String[][] dataSet) {
+        StringBuilder results = new StringBuilder();
+
         int rounds = 10;
         String[][] romajiDataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
 
@@ -79,16 +81,22 @@ public class SyllableTrainer {
             int col = ThreadLocalRandom.current().nextInt(0, dataSet[row].length);
 
             System.out.println("Which romaji syllable is this one?");
+            results.append("Which romaji syllable is this one? \\n");
             System.out.println(dataSet[row][col]);
+            results.append(dataSet[row][col] + "\\n");
             String input = getUserInput();
 
             int[] romajiIndex = searchForSyllable(input);
             if (romajiIndex[0] == row && romajiIndex[1] == col) {
                 System.out.println("Correct!");
+                results.append("Correct! \\n");
             }  else {
                 System.out.println("Wrong! It's " + romajiDataSet[row][col]);
+                results.append("Wrong! It's " + romajiDataSet[row][col] + "\\n");
             }
         }
+
+        return results.toString();
     }
 
     private static String getUserInput() {

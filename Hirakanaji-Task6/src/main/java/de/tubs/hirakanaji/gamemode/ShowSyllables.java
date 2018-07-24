@@ -19,7 +19,7 @@ public class ShowSyllables {
 
     }
 
-    public static void startShowSyllables() {
+    public static String startShowSyllables() {
         String[][] dataSet;
 
         System.out.println("Choose syllabary: Hiragana | Katakana | Romaji");
@@ -28,15 +28,15 @@ public class ShowSyllables {
         if ("Hiragana".equalsIgnoreCase(input)) {
             /* Hiragana */
             dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-            printSyllables(dataSet);
+            return printSyllables(dataSet);
         } else if ("Katakana".equalsIgnoreCase(input)) {
             /* Katakana */
             dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
-            printSyllables(dataSet);
+            return printSyllables(dataSet);
         } else {
             /* Romaji */
             dataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
-            printSyllables(dataSet);
+            return printSyllables(dataSet);
         }
 
     }
@@ -75,12 +75,17 @@ public class ShowSyllables {
         return scanner.nextLine();
     }
 
-    private static void printSyllables(String[][] dataSet) {
+    private static String printSyllables(String[][] dataSet) {
+        StringBuilder results = new StringBuilder();
+
         for (String[] aDataSet : dataSet) {
             for (String anADataSet : aDataSet) {
                 System.out.print(anADataSet);
+                results.append(anADataSet + "\\n");
             }
             System.out.println();
         }
+
+        return results.toString();
     }
 }

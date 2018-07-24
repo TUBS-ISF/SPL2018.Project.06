@@ -15,7 +15,7 @@ public class LearnVocabulary {
 
     }
 
-    public static void startLearnVocabulary() {
+    public static String startLearnVocabulary() {
         String[][] dataSet;
 
         System.out.println("How many rounds?");
@@ -27,12 +27,12 @@ public class LearnVocabulary {
         if ("Unit 1".equalsIgnoreCase(input)) {
             /* Unit 1 */
             dataSet = getDataSet(unit1Vocabulary);
-            startGame(dataSet);
+            return startGame(dataSet);
 
         } else {
             /* Unit 2 */
             dataSet = getDataSet(unit2Vocabulary);
-            startGame(dataSet);
+            return startGame(dataSet);
         }
     }
 
@@ -45,16 +45,21 @@ public class LearnVocabulary {
         return scanner.nextLine();
     }
 
-    private static void startGame(String[][] dataSet) {
+    private static String startGame(String[][] dataSet) {
+        StringBuilder results = new StringBuilder();
+
         for (int round = 0; round <= rounds; round++) {
             Scanner input = new Scanner(System.in);
 
             int row = ThreadLocalRandom.current().nextInt(0, dataSet.length);
             System.out.println(dataSet[row][0] + " | " + dataSet[row][1] +  " | " + dataSet[row][2]);
+            results.append(dataSet[row][0] + " | " + dataSet[row][1] +  " | " + dataSet[row][2] + "\\n");
 
             System.out.println("Press Enter to continue.");
             input.nextLine();
         }
+
+        return results.toString();
     }
 
 }
