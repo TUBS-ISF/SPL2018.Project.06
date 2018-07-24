@@ -7,15 +7,15 @@ import java.util.stream.Stream;
 import static de.tubs.hirakanaji.vocabulary.Unit1.unit1Vocabulary;
 import static de.tubs.hirakanaji.vocabulary.Unit2.unit2Vocabulary;
 
-public class PracticeVocabulary {
+public aspect PracticeVocabulary {
+
+    declare precedence: HirakanajiApplication, PracticeVocabulary;
+
+    after(): execution(void HirakanajiApplication.main()) {
+        startPracticeVocabulary();
+    }
 
     private static int rounds;
-
-//    declare precedence: HirakanajiApplication, PracticeVocabulary;
-//
-//    after(): execution(void HirakanajiApplication.main()) {
-//        startPracticeVocabulary();
-//    }
 
     private PracticeVocabulary() {
 

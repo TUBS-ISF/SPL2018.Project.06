@@ -7,7 +7,13 @@ import java.util.stream.Stream;
 import static de.tubs.hirakanaji.vocabulary.Unit1.unit1Vocabulary;
 import static de.tubs.hirakanaji.vocabulary.Unit2.unit2Vocabulary;
 
-public class LearnVocabulary {
+public aspect LearnVocabulary {
+
+    declare precedence: HirakanajiApplication, LearnVocabulary;
+
+    after(): execution(void HirakanajiApplication.main()) {
+        startLearnVocabulary();
+    }
 
     private static int rounds;
 

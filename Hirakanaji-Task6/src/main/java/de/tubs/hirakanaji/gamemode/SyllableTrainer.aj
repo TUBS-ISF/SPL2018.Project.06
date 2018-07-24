@@ -10,13 +10,13 @@ import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
 import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.katakanaYouonDakuten;
 import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
 
-public class SyllableTrainer {
+public aspect SyllableTrainer {
 
-//    declare precedence: HirakanajiApplication, SyllableTrainer;
-//
-//    after(): execution(void HirakanajiApplication.main()) {
-//        startSyllableTrainer();
-//    }
+    declare precedence: HirakanajiApplication, SyllableTrainer;
+
+    after(): execution(void HirakanajiApplication.main()) {
+        startSyllableTrainer();
+    }
 
     private SyllableTrainer() {
 

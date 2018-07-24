@@ -7,13 +7,13 @@ import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.*;
 import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
 import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
 
-public class ShowSyllables {
+public aspect ShowSyllables {
 
-//    declare precedence: HirakanajiApplication, ShowSyllables;
-//
-//    after(): execution(void HirakanajiApplication.main()) {
-//        startShowSyllables();
-//    }
+    declare precedence: HirakanajiApplication, ShowSyllables;
+
+    after(): execution(void HirakanajiApplication.main()) {
+        startShowSyllables();
+    }
 
     private ShowSyllables() {
 
