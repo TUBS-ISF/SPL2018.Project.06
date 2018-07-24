@@ -217,13 +217,13 @@ Adds application categories for the different application modes
                     <description>
 Category for vocabulary application modes
 </description>
-                    <feature abstract="true" name="LearnVocabulary">
+                    <feature name="LearnVocabulary">
                         <description>
 Adds the application mode for learning single vocabulary with its
 English translation
 </description>
                     </feature>
-                    <feature abstract="true" name="PracticeVocabulary">
+                    <feature name="PracticeVocabulary">
                         <description>
 Adds the application mode for practicing single vocabulary
 </description>
@@ -245,8 +245,8 @@ practicing writing and reading skills
 </description>
                         <feature name="VariableOutputSize">
                             <description>
-                                Adds the feature to change the output size of the Scrambler
-                            </description>
+Adds the feature to change the output size of the Scrambler
+</description>
                         </feature>
                     </and>
                     <feature name="ShowSyllables">
@@ -287,7 +287,7 @@ Adds the feature for an achievement system
 </description>
                 </feature>
             </and>
-            <or abstract="true" name="Export">
+            <or name="Export">
                 <description>
 Adds the feature for export functionalities
 </description>
@@ -296,7 +296,7 @@ Adds the feature for export functionalities
 Adds the feature for a PDF export of the current view
 </description>
                 </feature>
-                <feature abstract="true" name="TXT">
+                <feature name="TXT">
                     <description>
 Adds the feature for a TXT export of the current view
 </description>
