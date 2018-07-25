@@ -13,7 +13,7 @@ public aspect ShowSyllables {
     public static String syllabaries;
     public static String inputSyllabary;
 
-    before(): execution(void HirakanajiApplication.main()) {
+    before(): call(void de.tubs.hirakanaji.HirakanajiApplication.main()) {
         gameModes += " " + getClass().getName();
     }
 

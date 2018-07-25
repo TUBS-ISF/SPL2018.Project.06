@@ -17,7 +17,7 @@ public aspect LearnVocabulary {
     public static String inputUnit;
     public static String[][] dataSet;
 
-    before(): execution(void HirakanajiApplication.main()) {
+    before(): call(void de.tubs.hirakanaji.HirakanajiApplication.main()) {
         gameModes += " " + getClass().getName();
     }
 

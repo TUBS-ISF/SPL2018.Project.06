@@ -9,7 +9,7 @@ import static de.tubs.hirakanaji.HirakanajiApplication.exportText;
 
 public aspect Txt {
 
-    after(): execution(void HirakanajiApplication.main()) {
+    after(): execution(void de.tubs.hirakanaji.HirakanajiApplication.main()) {
         System.out.println("Your results will be exported into a text file. Enter file name.");
         String userInput = getUserInput();
 

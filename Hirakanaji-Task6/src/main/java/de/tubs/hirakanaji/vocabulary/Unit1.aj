@@ -3,7 +3,6 @@ package de.tubs.hirakanaji.vocabulary;
 import de.tubs.hirakanaji.gamemode.LearnVocabulary;
 import de.tubs.hirakanaji.gamemode.PracticeVocabulary;
 
-import static de.tubs.hirakanaji.gamemode.LearnVocabulary.getDataSet;
 import static de.tubs.hirakanaji.gamemode.LearnVocabulary.inputUnit;
 
 public aspect Unit1 {
@@ -18,13 +17,13 @@ public aspect Unit1 {
 
     after(): call(String de.tubs.hirakanaji.gamemode.LearnVocabulary.getUserInput()) {
         if (getClass().getName().equalsIgnoreCase(inputUnit)) {
-            LearnVocabulary.dataSet = getDataSet(unit1Vocabulary);
+            LearnVocabulary.dataSet = LearnVocabulary.getDataSet(unit1Vocabulary);
         }
     }
 
     after(): call(String de.tubs.hirakanaji.gamemode.PracticeVocabulary.getUserInput()) {
         if (getClass().getName().equalsIgnoreCase(inputUnit)) {
-            PracticeVocabulary.dataSet = getDataSet(unit1Vocabulary);
+            PracticeVocabulary.dataSet = PracticeVocabulary.getDataSet(unit1Vocabulary);
         }
     }
 
