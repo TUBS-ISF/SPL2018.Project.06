@@ -3,16 +3,24 @@ package de.tubs.hirakanaji.gamemode;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.*;
-import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
-import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
+import static de.tubs.hirakanaji.HirakanajiApplication.exportText;
+import static de.tubs.hirakanaji.HirakanajiApplication.gameModes;
+import static de.tubs.hirakanaji.HirakanajiApplication.userInput;
 
 public aspect ShowSyllables {
 
-    declare precedence: HirakanajiApplication, ShowSyllables;
+    public static String[][] dataSet;
+    public static String syllabaries;
+    public static String inputSyllabary;
 
-    after(): execution(void HirakanajiApplication.main()) {
-        startShowSyllables();
+    before(): execution(void HirakanajiApplication.main()) {
+        gameModes += " " + getClass().getName();
+    }
+
+    after(): call(String de.tubs.hirakanaji.HirakanajiApplication.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(userInput)) {
+            exportText = startShowSyllables();
+        }
     }
 
     private ShowSyllables() {
@@ -20,54 +28,10 @@ public aspect ShowSyllables {
     }
 
     public static String startShowSyllables() {
-        String[][] dataSet;
+        System.out.println("Choose syllabary:" + syllabaries);
+        inputSyllabary = getUserInput();
 
-        System.out.println("Choose syllabary: Hiragana | Katakana | Romaji");
-        String input = getUserInput();
-
-        if ("Hiragana".equalsIgnoreCase(input)) {
-            /* Hiragana */
-            dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-            return printSyllables(dataSet);
-        } else if ("Katakana".equalsIgnoreCase(input)) {
-            /* Katakana */
-            dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
-            return printSyllables(dataSet);
-        } else {
-            /* Romaji */
-            dataSet = getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten, romajiYouon, romajiYouonDakuten);
-            return printSyllables(dataSet);
-        }
-
-    }
-
-    private static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
-                                         String[][] youon, String[][] youonDakuten) {
-        System.out.println("Choose one or more sets (separator = ','): Gojuuon | Gojuuon with Dakuten | Youon | Youon with Dakuten");
-        String inputSet = getUserInput();
-        String[] inputSets = inputSet.split(",");
-
-        String[][] dataSet;
-        dataSet = Stream.of(chars)
-                .flatMap(Stream::of).toArray(String[][]::new);
-
-        for (String s : inputSets) {
-            if (s.equalsIgnoreCase("Gojuuon")) {
-                dataSet = Stream.of(dataSet, gojuuon)
-                        .flatMap(Stream::of).toArray(String[][]::new);
-            } else if (s.equalsIgnoreCase("Gojuuon with Dakuten")) {
-                dataSet = Stream.of(dataSet, gojuuonDakuten)
-                        .flatMap(Stream::of).toArray(String[][]::new);
-            }  else if (s.equalsIgnoreCase("Youon")) {
-                dataSet = Stream.of(dataSet, youon)
-                        .flatMap(Stream::of).toArray(String[][]::new);
-            }  else if (s.equalsIgnoreCase("Youon with Dakuten")) {
-                dataSet = Stream.of(dataSet, youonDakuten)
-                        .flatMap(Stream::of).toArray(String[][]::new);
-            }
-        }
-
-        return dataSet;
+        return printSyllables(dataSet);
     }
 
     private static String getUserInput() {
@@ -87,5 +51,34 @@ public aspect ShowSyllables {
         }
 
         return results.toString();
+    }
+
+    public static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
+                                         String[][] youon, String[][] youonDakuten) {
+        System.out.println("Choose one or more sets (separator = ','): Gojuuon | Gojuuon with Dakuten | Youon | Youon with Dakuten");
+        String inputSet = getUserInput();
+        String[] inputSets = inputSet.split(",");
+
+        String[][] dataSet;
+        dataSet = Stream.of(chars)
+                .flatMap(Stream::of).toArray(String[][]::new);
+
+        for (String s : inputSets) {
+            if (s.equals("Gojuuon")) {
+                dataSet = Stream.of(dataSet, gojuuon)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            } else if (s.equals("Gojuuon with Dakuten")) {
+                dataSet = Stream.of(dataSet, gojuuonDakuten)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            }  else if (s.equals("Youon")) {
+                dataSet = Stream.of(dataSet, youon)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            }  else if (s.equals("Youon with Dakuten")) {
+                dataSet = Stream.of(dataSet, youonDakuten)
+                        .flatMap(Stream::of).toArray(String[][]::new);
+            }
+        }
+
+        return dataSet;
     }
 }

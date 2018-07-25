@@ -1,12 +1,45 @@
 package de.tubs.hirakanaji.syllabary;
 
+import de.tubs.hirakanaji.gamemode.Scrambler;
+import de.tubs.hirakanaji.gamemode.ShowSyllables;
+import de.tubs.hirakanaji.gamemode.SyllableTrainer;
+
+import java.util.stream.Stream;
+
+import static de.tubs.hirakanaji.gamemode.Scrambler.*;
+
 /**
  * @author lisa-rosenberg
  * @since 13.05.2018
  */
-public class HiraganaDataSet {
+public aspect Hiragana {
 
     public static final String[][] hiraganaChars = new String[0][0];
+
+    before(): execution(String de.tubs.hirakanaji.gamemode.Scrambler.startScrambler()) {
+        syllabaries += " " + getClass().getName();
+    }
+
+    after(): call(String de.tubs.hirakanaji.gamemode.LearnVocabulary.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(Scrambler.inputSyllabary)) {
+            Scrambler.dataSet = Scrambler.getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten,
+                    hiraganaYouon, hiraganaYouonDakuten);
+        }
+    }
+
+    after(): call(String de.tubs.hirakanaji.gamemode.ShowSyllables.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(ShowSyllables.inputSyllabary)) {
+            ShowSyllables.dataSet = ShowSyllables.getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten,
+                    hiraganaYouon, hiraganaYouonDakuten);
+        }
+    }
+
+    after(): call(String de.tubs.hirakanaji.gamemode.SyllableTrainer.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(SyllableTrainer.inputSyllabary)) {
+            SyllableTrainer.dataSet = SyllableTrainer.getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten,
+                    hiraganaYouon, hiraganaYouonDakuten);
+        }
+    }
 
     public static final String[][] hiraganaGojuuon = new String[][] {
             // a    i     u     e    o

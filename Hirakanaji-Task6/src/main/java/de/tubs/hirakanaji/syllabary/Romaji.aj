@@ -1,12 +1,37 @@
-package de.tubs.hirakanaji.core;
+package de.tubs.hirakanaji.syllabary;
+
+import de.tubs.hirakanaji.gamemode.Scrambler;
+import de.tubs.hirakanaji.gamemode.ShowSyllables;
+import de.tubs.hirakanaji.gamemode.SyllableTrainer;
+
+import static de.tubs.hirakanaji.gamemode.Scrambler.*;
+import static de.tubs.hirakanaji.syllabary.Katakana.katakanaYouonDakuten;
 
 /**
  * @author lisa-rosenberg
  * @since 13.05.2018
  */
-public class RomajiDataSet {
+public aspect Romaji {
 
     public static final String[][] romajiChars = new String[0][0];
+
+    before(): execution(void de.tubs.hirakanaji.gamemode.Scrambler.startScrambler()) {
+        syllabaries += " " + getClass().getName();
+    }
+
+    after(): call(String de.tubs.hirakanaji.gamemode.LearnVocabulary.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(Scrambler.inputSyllabary)) {
+            Scrambler.dataSet = Scrambler.getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten,
+                    romajiYouon, romajiYouonDakuten);
+        }
+    }
+
+    after(): call(String de.tubs.hirakanaji.gamemode.ShowSyllables.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(ShowSyllables.inputSyllabary)) {
+            ShowSyllables.dataSet = ShowSyllables.getDataSet(romajiChars, romajiGojuuon, romajiGojuuonDakuten,
+                    romajiYouon, romajiYouonDakuten);
+        }
+    }
 
     public static final String[][] romajiGojuuon = new String[][] {
             {"a", "i", "u", "e", "o"},

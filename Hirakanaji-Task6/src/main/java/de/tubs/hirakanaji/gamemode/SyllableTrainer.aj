@@ -4,18 +4,27 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
-import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.*;
-import static de.tubs.hirakanaji.syllabary.HiraganaDataSet.hiraganaYouonDakuten;
-import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.*;
-import static de.tubs.hirakanaji.syllabary.KatakanaDataSet.katakanaYouonDakuten;
-import static de.tubs.hirakanaji.syllabary.RomajiDataSet.*;
+import static de.tubs.hirakanaji.HirakanajiApplication.exportText;
+import static de.tubs.hirakanaji.HirakanajiApplication.gameModes;
+import static de.tubs.hirakanaji.HirakanajiApplication.userInput;
+import static de.tubs.hirakanaji.syllabary.Hiragana.hiraganaYouonDakuten;
+import static de.tubs.hirakanaji.syllabary.Katakana.katakanaYouonDakuten;
+import static de.tubs.hirakanaji.syllabary.Romaji.*;
 
 public aspect SyllableTrainer {
 
-    declare precedence: HirakanajiApplication, SyllableTrainer;
+    public static String[][] dataSet;
+    public static String syllabaries;
+    public static String inputSyllabary;
 
-    after(): execution(void HirakanajiApplication.main()) {
-        startSyllableTrainer();
+    before(): execution(void HirakanajiApplication.main()) {
+        gameModes += " " + getClass().getName();
+    }
+
+    after(): call(String de.tubs.hirakanaji.HirakanajiApplication.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(userInput)) {
+            exportText = startSyllableTrainer();
+        }
     }
 
     private SyllableTrainer() {
@@ -23,25 +32,13 @@ public aspect SyllableTrainer {
     }
 
     public static String startSyllableTrainer() {
-        String[][] dataSet;
+        System.out.println("Choose syllabary:" + syllabaries);
+        inputSyllabary = getUserInput();
 
-        System.out.println("Choose syllabary: Hiragana | Katakana");
-        String input = getUserInput();
-
-        if ("Hiragana".equalsIgnoreCase(input)) {
-            /* Hiragana */
-            dataSet = getDataSet(hiraganaChars, hiraganaGojuuon, hiraganaGojuuonDakuten, hiraganaYouon, hiraganaYouonDakuten);
-            return askQuestions(dataSet);
-
-        } else {
-            /* Katakana */
-            dataSet = getDataSet(katakanaChars, katakanaGojuuon, katakanaGojuuonDakuten, katakanaYouon, katakanaYouonDakuten);
-            return askQuestions(dataSet);
-        }
-
+        return askQuestions(dataSet);
     }
 
-    private static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
+    public static String[][] getDataSet(String[][] chars, String[][] gojuuon, String[][] gojuuonDakuten,
                                          String[][] youon, String[][] youonDakuten) {
         System.out.println("Choose one or more sets (separator = ','): Gojuuon | Gojuuon with Dakuten | Youon | Youon with Dakuten");
         String inputSet = getUserInput();

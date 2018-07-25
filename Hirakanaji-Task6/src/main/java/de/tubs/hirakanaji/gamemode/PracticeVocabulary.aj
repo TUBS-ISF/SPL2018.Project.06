@@ -4,45 +4,44 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
 
+import static de.tubs.hirakanaji.HirakanajiApplication.exportText;
+import static de.tubs.hirakanaji.HirakanajiApplication.gameModes;
+import static de.tubs.hirakanaji.HirakanajiApplication.userInput;
 import static de.tubs.hirakanaji.vocabulary.Unit1.unit1Vocabulary;
 import static de.tubs.hirakanaji.vocabulary.Unit2.unit2Vocabulary;
 
 public aspect PracticeVocabulary {
 
-    declare precedence: HirakanajiApplication, PracticeVocabulary;
+    private static int rounds;
+    public static String units;
+    public static String inputUnit;
+    public static String[][] dataSet;
 
-    after(): execution(void HirakanajiApplication.main()) {
-        startPracticeVocabulary();
+    before(): execution(void HirakanajiApplication.main()) {
+        gameModes += " " + getClass().getName();
     }
 
-    private static int rounds;
+    after(): call(String de.tubs.hirakanaji.HirakanajiApplication.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(userInput)) {
+            exportText = startPracticeVocabulary();
+        }
+    }
 
     private PracticeVocabulary() {
 
     }
 
     public static String startPracticeVocabulary() {
-        String[][] dataSet;
-
         System.out.println("How many rounds?");
         rounds = Integer.parseInt(getUserInput());
 
-        System.out.println("Choose unit: Unit 1 | Unit 2");
-        String input = getUserInput();
+        System.out.println("Choose unit:" + units);
+        inputUnit = getUserInput();
 
-        if ("Unit 1".equalsIgnoreCase(input)) {
-            /* Unit 1 */
-            dataSet = getDataSet(unit1Vocabulary);
-            return startGame(dataSet);
-
-        } else {
-            /* Unit 2 */
-            dataSet = getDataSet(unit2Vocabulary);
-            return startGame(dataSet);
-        }
+        return startGame(dataSet);
     }
 
-    private static String[][] getDataSet(String[][] unitVocabulary) {
+    public static String[][] getDataSet(String[][] unitVocabulary) {
         return Stream.of(new String[0][0], unitVocabulary).flatMap(Stream::of).toArray(String[][]::new);
     }
 

@@ -1,6 +1,32 @@
 package de.tubs.hirakanaji.vocabulary;
 
-public class Unit2 {
+import de.tubs.hirakanaji.gamemode.LearnVocabulary;
+import de.tubs.hirakanaji.gamemode.PracticeVocabulary;
+
+import static de.tubs.hirakanaji.gamemode.LearnVocabulary.getDataSet;
+import static de.tubs.hirakanaji.gamemode.LearnVocabulary.inputUnit;
+
+public aspect Unit2 {
+
+    before(): execution(String de.tubs.hirakanaji.gamemode.LearnVocabulary.startLearnVocabulary()) {
+        LearnVocabulary.units += " " + getClass().getName();
+    }
+
+    before(): execution(String de.tubs.hirakanaji.gamemode.PracticeVocabulary.startPracticeVocabulary()) {
+        PracticeVocabulary.units += " " + getClass().getName();
+    }
+
+    after(): call(String de.tubs.hirakanaji.gamemode.LearnVocabulary.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(inputUnit)) {
+            LearnVocabulary.dataSet = getDataSet(unit2Vocabulary);
+        }
+    }
+
+    after(): call(String de.tubs.hirakanaji.gamemode.PracticeVocabulary.getUserInput()) {
+        if (getClass().getName().equalsIgnoreCase(inputUnit)) {
+            PracticeVocabulary.dataSet = getDataSet(unit2Vocabulary);
+        }
+    }
 
     public static final String[][] unit2Vocabulary = new String[][] {
             {"Nihon",           "Japan",                "にほん"},
